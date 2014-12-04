@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C8ACE3761A2CFFC700F968CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ACE3751A2CFFC700F968CD /* AppDelegate.swift */; };
-		C8ACE3781A2CFFC700F968CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ACE3771A2CFFC700F968CD /* ViewController.swift */; };
+		C8ACE3781A2CFFC700F968CD /* KRWMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ACE3771A2CFFC700F968CD /* KRWMapViewController.swift */; };
 		C8ACE37B1A2CFFC700F968CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8ACE3791A2CFFC700F968CD /* Main.storyboard */; };
 		C8ACE37D1A2CFFC700F968CD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8ACE37C1A2CFFC700F968CD /* Images.xcassets */; };
 		C8ACE3801A2CFFC700F968CD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8ACE37E1A2CFFC700F968CD /* LaunchScreen.xib */; };
@@ -31,7 +31,7 @@
 		C8ACE3701A2CFFC700F968CD /* Spot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8ACE3741A2CFFC700F968CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8ACE3751A2CFFC700F968CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C8ACE3771A2CFFC700F968CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C8ACE3771A2CFFC700F968CD /* KRWMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KRWMapViewController.swift; sourceTree = "<group>"; };
 		C8ACE37A1A2CFFC700F968CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C8ACE37C1A2CFFC700F968CD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C8ACE37F1A2CFFC700F968CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				C8ACE3751A2CFFC700F968CD /* AppDelegate.swift */,
-				C8ACE3771A2CFFC700F968CD /* ViewController.swift */,
+				C8ACE3771A2CFFC700F968CD /* KRWMapViewController.swift */,
 				C8ACE3791A2CFFC700F968CD /* Main.storyboard */,
 				C8ACE37C1A2CFFC700F968CD /* Images.xcassets */,
 				C8ACE37E1A2CFFC700F968CD /* LaunchScreen.xib */,
@@ -220,7 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8ACE3781A2CFFC700F968CD /* ViewController.swift in Sources */,
+				C8ACE3781A2CFFC700F968CD /* KRWMapViewController.swift in Sources */,
 				C8ACE3761A2CFFC700F968CD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
