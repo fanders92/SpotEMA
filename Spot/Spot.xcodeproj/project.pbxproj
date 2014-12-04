@@ -13,6 +13,8 @@
 		C8ACE37D1A2CFFC700F968CD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8ACE37C1A2CFFC700F968CD /* Images.xcassets */; };
 		C8ACE3801A2CFFC700F968CD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8ACE37E1A2CFFC700F968CD /* LaunchScreen.xib */; };
 		C8ACE38C1A2CFFC700F968CD /* SpotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ACE38B1A2CFFC700F968CD /* SpotTests.swift */; };
+		C8FAC9BC1A308CBA0009FE85 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8FAC9BB1A308CBA0009FE85 /* MapKit.framework */; };
+		C8FAC9BE1A308E2A0009FE85 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8FAC9BD1A308E2A0009FE85 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		C8ACE3851A2CFFC700F968CD /* SpotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8ACE38A1A2CFFC700F968CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8ACE38B1A2CFFC700F968CD /* SpotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotTests.swift; sourceTree = "<group>"; };
+		C8FAC9BB1A308CBA0009FE85 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C8FAC9BD1A308E2A0009FE85 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8FAC9BE1A308E2A0009FE85 /* CoreLocation.framework in Frameworks */,
+				C8FAC9BC1A308CBA0009FE85 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +65,8 @@
 		C8ACE3671A2CFFC700F968CD = {
 			isa = PBXGroup;
 			children = (
+				C8FAC9BD1A308E2A0009FE85 /* CoreLocation.framework */,
+				C8FAC9BB1A308CBA0009FE85 /* MapKit.framework */,
 				C8ACE3721A2CFFC700F968CD /* Spot */,
 				C8ACE3881A2CFFC700F968CD /* SpotTests */,
 				C8ACE3711A2CFFC700F968CD /* Products */,
@@ -405,6 +413,7 @@
 				C8ACE3911A2CFFC700F968CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C8ACE3921A2CFFC700F968CD /* Build configuration list for PBXNativeTarget "SpotTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +422,7 @@
 				C8ACE3941A2CFFC700F968CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
