@@ -8,7 +8,7 @@
         <scene sceneID="xXg-MR-6My">
             <objects>
                 <navigationController id="iEx-6o-Wn2" sceneMemberID="viewController">
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eOU-VA-YkL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -19,7 +19,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eYx-jd-HTF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1967" y="-1007"/>
+            <point key="canvasLocation" x="-2307" y="-1008"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="zhS-gM-MMx">
@@ -30,23 +30,17 @@
                         <viewControllerLayoutGuide type="bottom" id="A3C-mF-pWP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="CKN-ys-2Gn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1VW-QM-ePz">
-                                <rect key="frame" x="106" y="208" width="163" height="30"/>
-                                <state key="normal" title="Set Emergency Contact">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jv5-jy-Y1f">
-                                <rect key="frame" x="106" y="275" width="163" height="30"/>
+                                <rect key="frame" x="79" y="234" width="163" height="30"/>
                                 <state key="normal" title="Take Picture">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fzq-DV-SiH">
-                                <rect key="frame" x="106" y="502" width="163" height="30"/>
+                                <rect key="frame" x="79" y="342" width="163" height="30"/>
                                 <state key="normal" title="Switch to Drunk-Mode">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -54,11 +48,16 @@
                                     <segue destination="YMo-fC-dCW" kind="show" id="cgL-Vr-mjT"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1VW-QM-ePz">
+                                <rect key="frame" x="79" y="196" width="163" height="30"/>
+                                <state key="normal" title="Set Emergency Contact">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="n6l-Bj-MpW"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gpG-iN-go9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -73,24 +72,26 @@
                         <viewControllerLayoutGuide type="bottom" id="k6O-bR-Rdi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="H2t-BX-Tba">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZTh-CR-Tqv">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <toolbarItems>
+                        <barButtonItem title="t" id="GWm-ZL-uSH"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mapView" destination="ZTh-CR-Tqv" id="Eyy-Pq-t68"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rsn-si-gPF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-763.5" y="-1007.5"/>
+            <point key="canvasLocation" x="-526" y="-1008"/>
         </scene>
     </scenes>
 </document>

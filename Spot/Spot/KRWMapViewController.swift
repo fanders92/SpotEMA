@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class KRWMapViewController: UIViewController, CLLocationManagerDelegate {
+class KRWMapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     
@@ -20,12 +20,17 @@ class KRWMapViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        
         if (CLLocationManager.locationServicesEnabled()) {
             // Set current ViewController to the delegate
             locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
             locationManager.requestWhenInUseAuthorization()
             locationManager.startUpdatingLocation()
+            mapView.delegate = self
+            mapView.showsUserLocation = true
         } else {
             println("Location services are not enabled");
         }
@@ -51,14 +56,12 @@ class KRWMapViewController: UIViewController, CLLocationManagerDelegate {
         //Coordinations od the current position (gps)
         var coord = locationObj.coordinate
         
-        println(coord.latitude)
-        println(coord.longitude)
         // Calculate the center
-        let center = CLLocationCoordinate2D(latitude: coord.latitude, longitude: coord.longitude)
+        //let center = CLLocationCoordinate2D(latitude: coord.latitude, longitude: coord.longitude)
         // Calculate the region which is shown by themap
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        //let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         // Set the Maps view to the region
-        self.mapView.setRegion(region, animated: true)
+        //self.mapView.setRegion(region, animated: true)
         
     }
     

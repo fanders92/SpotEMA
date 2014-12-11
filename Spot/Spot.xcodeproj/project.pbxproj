@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C847927F1A39C7F70097CE65 /* kRWLocationSymbolOff.png in Resources */ = {isa = PBXBuildFile; fileRef = C847927D1A39C7F70097CE65 /* kRWLocationSymbolOff.png */; };
+		C84792801A39C7F70097CE65 /* kRWLocationSymbolOn.png in Resources */ = {isa = PBXBuildFile; fileRef = C847927E1A39C7F70097CE65 /* kRWLocationSymbolOn.png */; };
 		C8ACE3761A2CFFC700F968CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ACE3751A2CFFC700F968CD /* AppDelegate.swift */; };
 		C8ACE3781A2CFFC700F968CD /* KRWMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ACE3771A2CFFC700F968CD /* KRWMapViewController.swift */; };
 		C8ACE37B1A2CFFC700F968CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8ACE3791A2CFFC700F968CD /* Main.storyboard */; };
@@ -28,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C847927D1A39C7F70097CE65 /* kRWLocationSymbolOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kRWLocationSymbolOff.png; sourceTree = "<group>"; };
+		C847927E1A39C7F70097CE65 /* kRWLocationSymbolOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kRWLocationSymbolOn.png; sourceTree = "<group>"; };
 		C8ACE3701A2CFFC700F968CD /* Spot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8ACE3741A2CFFC700F968CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8ACE3751A2CFFC700F968CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +89,8 @@
 		C8ACE3721A2CFFC700F968CD /* Spot */ = {
 			isa = PBXGroup;
 			children = (
+				C847927D1A39C7F70097CE65 /* kRWLocationSymbolOff.png */,
+				C847927E1A39C7F70097CE65 /* kRWLocationSymbolOn.png */,
 				C8ACE3751A2CFFC700F968CD /* AppDelegate.swift */,
 				C8ACE3771A2CFFC700F968CD /* KRWMapViewController.swift */,
 				C8ACE3791A2CFFC700F968CD /* Main.storyboard */,
@@ -201,8 +207,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8ACE37B1A2CFFC700F968CD /* Main.storyboard in Resources */,
+				C847927F1A39C7F70097CE65 /* kRWLocationSymbolOff.png in Resources */,
 				C8ACE3801A2CFFC700F968CD /* LaunchScreen.xib in Resources */,
 				C8ACE37D1A2CFFC700F968CD /* Images.xcassets in Resources */,
+				C84792801A39C7F70097CE65 /* kRWLocationSymbolOn.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
