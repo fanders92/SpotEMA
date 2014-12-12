@@ -9,7 +9,7 @@
 import UIKit
 import AddressBookUI
 
-class SoberViewController: UIViewController, ABPeoplePickerNavigationControllerDelegate {
+class SoberViewController: UIViewController, ABPeoplePickerNavigationControllerDelegate, UINavigationControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +25,15 @@ class SoberViewController: UIViewController, ABPeoplePickerNavigationControllerD
 
     @IBAction func setEmergencyContact(sender: UIButton) {
         let abController = ABPeoplePickerNavigationController()
+        abController.peoplePickerDelegate = self
+        abController.displayedProperties = [NSNumber(int: kABPersonPhoneProperty)]
         self.presentViewController(abController, animated: true, completion: nil)
-        
     }
+
+    func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecord!, property: ABPropertyID, identifier: ABMultiValueIdentifier){
+        println(identifier)
+    }
+
 
     
 
