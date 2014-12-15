@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iEx-6o-Wn2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -58,37 +57,33 @@
                                     <action selector="setEmergencyContact:" destination="Dg2-xK-zOn" eventType="touchUpInside" id="1HD-ec-F4F"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PhoneNumberPlaceholder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeB-7A-5VE">
-                                <rect key="frame" x="59" y="148" width="202" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="5r9-Je-ioV"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="59" y="141" width="202" height="21"/>
-                                </variation>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9k-HS-sMF">
+                                <rect key="frame" x="70" y="147" width="180" height="30"/>
+                                <state key="normal" title="PhoneNumberPlaceholder">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="callPhoneNumber:" destination="Dg2-xK-zOn" eventType="touchUpInside" id="iLY-0J-ZeN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Jv5-jy-Y1f" firstAttribute="leading" secondItem="1VW-QM-ePz" secondAttribute="leading" id="1ZT-h9-7Yp"/>
-                            <constraint firstItem="qeB-7A-5VE" firstAttribute="leading" secondItem="CKN-ys-2Gn" secondAttribute="leadingMargin" constant="43" id="2dU-RX-0EJ"/>
-                            <constraint firstItem="Fzq-DV-SiH" firstAttribute="top" secondItem="Jv5-jy-Y1f" secondAttribute="bottom" constant="78" id="2vs-f2-Xgk"/>
-                            <constraint firstItem="Jv5-jy-Y1f" firstAttribute="top" secondItem="1VW-QM-ePz" secondAttribute="bottom" constant="8" symbolic="YES" id="GCt-L6-hct"/>
-                            <constraint firstItem="1VW-QM-ePz" firstAttribute="centerX" secondItem="qeB-7A-5VE" secondAttribute="centerX" id="HZo-h1-dFc"/>
-                            <constraint firstItem="qeB-7A-5VE" firstAttribute="top" secondItem="g2V-t1-4uD" secondAttribute="bottom" constant="84" id="I2y-Rz-gof"/>
-                            <constraint firstItem="1VW-QM-ePz" firstAttribute="trailing" secondItem="Jv5-jy-Y1f" secondAttribute="trailing" id="JQv-9m-y2V"/>
-                            <constraint firstItem="qeB-7A-5VE" firstAttribute="centerX" secondItem="CKN-ys-2Gn" secondAttribute="centerX" id="QOl-mx-tBh"/>
-                            <constraint firstItem="Jv5-jy-Y1f" firstAttribute="trailing" secondItem="Fzq-DV-SiH" secondAttribute="trailing" id="ltk-3k-reO"/>
-                            <constraint firstItem="1VW-QM-ePz" firstAttribute="top" secondItem="qeB-7A-5VE" secondAttribute="bottom" constant="27" id="oEA-fY-kpi"/>
-                            <constraint firstItem="Jv5-jy-Y1f" firstAttribute="leading" secondItem="Fzq-DV-SiH" secondAttribute="leading" id="vgt-IU-YmK"/>
+                            <constraint firstItem="1VW-QM-ePz" firstAttribute="top" secondItem="S9k-HS-sMF" secondAttribute="bottom" constant="19" id="3bb-2O-Qfd"/>
+                            <constraint firstItem="Jv5-jy-Y1f" firstAttribute="top" secondItem="1VW-QM-ePz" secondAttribute="bottom" constant="8" symbolic="YES" id="9rg-Jr-HD9"/>
+                            <constraint firstItem="S9k-HS-sMF" firstAttribute="top" secondItem="g2V-t1-4uD" secondAttribute="bottom" constant="83" id="CY6-he-o2w"/>
+                            <constraint firstItem="1VW-QM-ePz" firstAttribute="trailing" secondItem="Jv5-jy-Y1f" secondAttribute="trailing" id="Gdf-so-e5Q"/>
+                            <constraint firstItem="S9k-HS-sMF" firstAttribute="centerX" secondItem="CKN-ys-2Gn" secondAttribute="centerX" id="SEU-8A-OPU"/>
+                            <constraint firstItem="1VW-QM-ePz" firstAttribute="leading" secondItem="Jv5-jy-Y1f" secondAttribute="leading" id="T0I-tz-Uay"/>
+                            <constraint firstItem="Fzq-DV-SiH" firstAttribute="top" secondItem="Jv5-jy-Y1f" secondAttribute="bottom" constant="78" id="TVT-cz-il1"/>
+                            <constraint firstItem="Jv5-jy-Y1f" firstAttribute="leading" secondItem="Fzq-DV-SiH" secondAttribute="leading" id="bqp-Yk-Fsg"/>
+                            <constraint firstItem="1VW-QM-ePz" firstAttribute="centerX" secondItem="S9k-HS-sMF" secondAttribute="centerX" id="rxz-8y-Rg7"/>
+                            <constraint firstItem="Fzq-DV-SiH" firstAttribute="trailing" secondItem="Jv5-jy-Y1f" secondAttribute="trailing" id="xgI-VI-jUP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Spot" id="n6l-Bj-MpW"/>
                     <connections>
-                        <outlet property="phoneNumberLabel" destination="qeB-7A-5VE" id="D54-UB-T1R"/>
+                        <outlet property="phoneNumberButton" destination="S9k-HS-sMF" id="6UM-uK-EWq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gpG-iN-go9" userLabel="First Responder" sceneMemberID="firstResponder"/>

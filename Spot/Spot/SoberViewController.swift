@@ -11,9 +11,11 @@ import AddressBookUI
 
 class SoberViewController: UIViewController, ABPeoplePickerNavigationControllerDelegate, UINavigationControllerDelegate {
     
-    @IBOutlet weak var phoneNumberLabel: UILabel!
+    @IBOutlet weak var phoneNumberButton: UIButton!
 
-    let charSet = NSCharacterSet(charactersInString: "() -")
+    lazy var charSet = NSCharacterSet(charactersInString: "()- ")
+    
+    var phoneNumber = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,20 +36,19 @@ class SoberViewController: UIViewController, ABPeoplePickerNavigationControllerD
     }
 
     func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecord!, property: ABPropertyID, identifier: ABMultiValueIdentifier){
-//        if (property == kABPersonPhoneProperty) {
-//            let multiPhones: ABMultiValueRef = ABRecordCopyValue(person, kABPersonPhoneProperty).takeUnretainedValue()
-//            for i in 0..<ABMultiValueGetCount(multiPhones) {
-//                if identifier == ABMultiValueGetIdentifierAtIndex(multiPhones, i) {
-//                    let phoneNumberRef: AnyObject = ABMultiValueCopyValueAtIndex(multiPhones, i).takeUnretainedValue()
-//                    if let phoneNumber = phoneNumberRef as? String {
-//                        println(phoneNumber)
-//                    }
-//                }
-//            }
-//        }
-        phoneNumberLabel.text = getPhoneNumberOfSelectedPerson(person, identifier: identifier)
-        //println(getPhoneNumberOfSelectedPerson(person, identifier: identifier))
-        cleanPhoneNumber(getPhoneNumberOfSelectedPerson(person, identifier: identifier) as String)
+        
+        phoneNumberButton.setTitle(getPhoneNumberOfSelectedPerson(person, identifier: identifier), forState: .Normal)
+        phoneNumber = cleanPhoneNumber(getPhoneNumberOfSelectedPerson(person, identifier: identifier) as String)
+    }
+    
+    @IBAction func callPhoneNumber(sender: UIButton) {
+        println(phoneNumber)
+        if let url = NSURL(string:phoneNumber){
+            if UIApplication.sharedApplication().canOpenURL(url){
+                println(url)
+                UIApplication.sharedApplication().openURL(url)
+            }
+        }
     }
     
     func getPhoneNumberOfSelectedPerson(person: ABRecord, identifier: ABMultiValueIdentifier) -> String {
@@ -59,10 +60,12 @@ class SoberViewController: UIViewController, ABPeoplePickerNavigationControllerD
         return ""
     }
     
-    func cleanPhoneNumber(var phoneNumber: String){
+    func cleanPhoneNumber(var phoneNumber: String) -> String{
        (phoneNumber.componentsSeparatedByCharactersInSet(charSet) as NSArray).componentsJoinedByString("")
+        phoneNumber = phoneNumber.stringByReplacingOccurrencesOfString("+", withString: "00")
+        phoneNumber = phoneNumber.stringByReplacingOccurrencesOfString(" ", withString: "")
         phoneNumber = "tel://" + phoneNumber
-        println(phoneNumber)
+        return phoneNumber
     }
 
 }
