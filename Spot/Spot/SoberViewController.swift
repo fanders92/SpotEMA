@@ -10,10 +10,15 @@ import UIKit
 import AddressBookUI
 
 class SoberViewController: UIViewController, ABPeoplePickerNavigationControllerDelegate, UINavigationControllerDelegate {
+    
+    @IBOutlet weak var phoneNumberButton: UIButton!
 
+    lazy var charSet = NSCharacterSet(charactersInString: "()- ")
+    
+    var phoneNumber = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -31,10 +36,36 @@ class SoberViewController: UIViewController, ABPeoplePickerNavigationControllerD
     }
 
     func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecord!, property: ABPropertyID, identifier: ABMultiValueIdentifier){
-        println(identifier)
+        
+        phoneNumberButton.setTitle(getPhoneNumberOfSelectedPerson(person, identifier: identifier), forState: .Normal)
+        phoneNumber = cleanPhoneNumber(getPhoneNumberOfSelectedPerson(person, identifier: identifier) as String)
     }
-
-
     
+    @IBAction func callPhoneNumber(sender: UIButton) {
+        println(phoneNumber)
+        if let url = NSURL(string:phoneNumber){
+            if UIApplication.sharedApplication().canOpenURL(url){
+                println(url)
+                UIApplication.sharedApplication().openURL(url)
+            }
+        }
+    }
+    
+    func getPhoneNumberOfSelectedPerson(person: ABRecord, identifier: ABMultiValueIdentifier) -> String {
+        let phones: ABMultiValue = ABRecordCopyValue(person, kABPersonPhoneProperty).takeUnretainedValue()
+        let index = ABMultiValueGetIndexForIdentifier(phones, identifier)
+        if let phoneNumber = ABMultiValueCopyValueAtIndex(phones, index).takeUnretainedValue() as? String {
+            return phoneNumber
+        }
+        return ""
+    }
+    
+    func cleanPhoneNumber(var phoneNumber: String) -> String{
+       (phoneNumber.componentsSeparatedByCharactersInSet(charSet) as NSArray).componentsJoinedByString("")
+        phoneNumber = phoneNumber.stringByReplacingOccurrencesOfString("+", withString: "00")
+        phoneNumber = phoneNumber.stringByReplacingOccurrencesOfString(" ", withString: "")
+        phoneNumber = "tel://" + phoneNumber
+        return phoneNumber
+    }
 
 }
