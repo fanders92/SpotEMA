@@ -13,9 +13,9 @@ class KRWDrunkButton: UIButton {
     
     override func drawRect(rect: CGRect) {
         if self.state == UIControlState.Normal {
-            KRWDrunkButtonStyleKit.drawKRWDrunkButtonNormal()
+            KRWSpotButtonStyleKit.drawKRWDrunkButtonNormal()
         }else{
-            KRWDrunkButtonStyleKit.drawKRWDrunkButtonClicked()
+            KRWSpotButtonStyleKit.drawKRWDrunkButtonClicked()
         }
     }
 }

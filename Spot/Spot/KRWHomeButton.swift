@@ -12,7 +12,9 @@ class KRWHomeButton: UIButton {
 
     override func drawRect(rect: CGRect) {
         if self.state == UIControlState.Normal {
-            KRWDrunkButtonStyleKit.drawKRWHomeButtonNormal()
+            KRWSpotButtonStyleKit.drawKRWHomeButtonNormal()
+        }else{
+            KRWSpotButtonStyleKit.drawKRWHomeButtonClicked()
         }
     }
 

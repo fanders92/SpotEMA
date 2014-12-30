@@ -12,7 +12,9 @@ class KRWContactButton: UIButton {
 
     override func drawRect(rect: CGRect) {
         if self.state == UIControlState.Normal {
-            KRWDrunkButtonStyleKit.drawKRWContactButtonNormal()
+            KRWSpotButtonStyleKit.drawKRWContactButtonNormal()
+        }else{
+            KRWSpotButtonStyleKit.drawKRWContactButtonClicked()
         }
     }
 

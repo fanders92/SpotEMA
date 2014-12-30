@@ -1,5 +1,5 @@
 //
-//  KRWDrunkButtonStyleKit.swift
+//  KRWSpotButtonStyleKit.swift
 //  Spot
 //
 //  Created by Konstantin Wachendorff on 30/12/14.
@@ -12,13 +12,13 @@
 
 import UIKit
 
-public class KRWDrunkButtonStyleKit : NSObject {
+public class KRWSpotButtonStyleKit : NSObject {
 
     //// Cache
 
     private struct Cache {
         static var kRWDrunkButtonColor: UIColor = UIColor(red: 0.163, green: 0.329, blue: 0.688, alpha: 1.000)
-        static var kRWDrunkButtonColorClicked: UIColor = KRWDrunkButtonStyleKit.kRWDrunkButtonColor.colorWithBrightness(1)
+        static var kRWDrunkButtonColorClicked: UIColor = KRWSpotButtonStyleKit.kRWDrunkButtonColor.colorWithBrightness(1)
     }
 
     //// Colors
@@ -27,35 +27,6 @@ public class KRWDrunkButtonStyleKit : NSObject {
     public class var kRWDrunkButtonColorClicked: UIColor { return Cache.kRWDrunkButtonColorClicked }
 
     //// Drawing Methods
-
-    public class func drawKRWDrunkButtonNormal() {
-
-        //// KRWDrunkButton Drawing
-        var kRWDrunkButtonPath = UIBezierPath()
-        kRWDrunkButtonPath.moveToPoint(CGPointMake(10, 40))
-        kRWDrunkButtonPath.addLineToPoint(CGPointMake(240, 40))
-        kRWDrunkButtonPath.addLineToPoint(CGPointMake(240, 10))
-        kRWDrunkButtonPath.addLineToPoint(CGPointMake(10, 10))
-        kRWDrunkButtonPath.addLineToPoint(CGPointMake(10, 40))
-        kRWDrunkButtonPath.closePath()
-        kRWDrunkButtonPath.lineJoinStyle = kCGLineJoinRound;
-
-        KRWDrunkButtonStyleKit.kRWDrunkButtonColor.setFill()
-        kRWDrunkButtonPath.fill()
-        KRWDrunkButtonStyleKit.kRWDrunkButtonColor.setStroke()
-        kRWDrunkButtonPath.lineWidth = 20
-        kRWDrunkButtonPath.stroke()
-
-
-        //// KRWDrunkButtonText Drawing
-        let kRWDrunkButtonTextRect = CGRectMake(10, 10, 230, 30)
-        let kRWDrunkButtonTextStyle = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as NSMutableParagraphStyle
-        kRWDrunkButtonTextStyle.alignment = NSTextAlignment.Center
-
-        let kRWDrunkButtonTextFontAttributes = [NSFontAttributeName: UIFont(name: "Helvetica", size: 25)!, NSForegroundColorAttributeName: UIColor.whiteColor(), NSParagraphStyleAttributeName: kRWDrunkButtonTextStyle]
-
-        "I am Drunk!".drawInRect(kRWDrunkButtonTextRect, withAttributes: kRWDrunkButtonTextFontAttributes)
-    }
 
     public class func drawKRWDrunkButtonClicked() {
 
@@ -69,9 +40,9 @@ public class KRWDrunkButtonStyleKit : NSObject {
         kRWDrunkButtonPath.closePath()
         kRWDrunkButtonPath.lineJoinStyle = kCGLineJoinRound;
 
-        KRWDrunkButtonStyleKit.kRWDrunkButtonColorClicked.setFill()
+        KRWSpotButtonStyleKit.kRWDrunkButtonColor.setFill()
         kRWDrunkButtonPath.fill()
-        KRWDrunkButtonStyleKit.kRWDrunkButtonColorClicked.setStroke()
+        KRWSpotButtonStyleKit.kRWDrunkButtonColor.setStroke()
         kRWDrunkButtonPath.lineWidth = 20
         kRWDrunkButtonPath.stroke()
 
@@ -86,7 +57,36 @@ public class KRWDrunkButtonStyleKit : NSObject {
         "I am Drunk!".drawInRect(kRWDrunkButtonTextRect, withAttributes: kRWDrunkButtonTextFontAttributes)
     }
 
-    public class func drawKRWHomeButtonNormal() {
+    public class func drawKRWDrunkButtonNormal() {
+
+        //// KRWDrunkButton Drawing
+        var kRWDrunkButtonPath = UIBezierPath()
+        kRWDrunkButtonPath.moveToPoint(CGPointMake(10, 40))
+        kRWDrunkButtonPath.addLineToPoint(CGPointMake(240, 40))
+        kRWDrunkButtonPath.addLineToPoint(CGPointMake(240, 10))
+        kRWDrunkButtonPath.addLineToPoint(CGPointMake(10, 10))
+        kRWDrunkButtonPath.addLineToPoint(CGPointMake(10, 40))
+        kRWDrunkButtonPath.closePath()
+        kRWDrunkButtonPath.lineJoinStyle = kCGLineJoinRound;
+
+        KRWSpotButtonStyleKit.kRWDrunkButtonColorClicked.setFill()
+        kRWDrunkButtonPath.fill()
+        KRWSpotButtonStyleKit.kRWDrunkButtonColorClicked.setStroke()
+        kRWDrunkButtonPath.lineWidth = 20
+        kRWDrunkButtonPath.stroke()
+
+
+        //// KRWDrunkButtonText Drawing
+        let kRWDrunkButtonTextRect = CGRectMake(10, 10, 230, 30)
+        let kRWDrunkButtonTextStyle = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as NSMutableParagraphStyle
+        kRWDrunkButtonTextStyle.alignment = NSTextAlignment.Center
+
+        let kRWDrunkButtonTextFontAttributes = [NSFontAttributeName: UIFont(name: "Helvetica", size: 25)!, NSForegroundColorAttributeName: UIColor.whiteColor(), NSParagraphStyleAttributeName: kRWDrunkButtonTextStyle]
+
+        "I am Drunk!".drawInRect(kRWDrunkButtonTextRect, withAttributes: kRWDrunkButtonTextFontAttributes)
+    }
+
+    public class func drawKRWHomeButtonClicked() {
         //// Color Declarations
         let kRWHomeButtonColor = UIColor(red: 0.826, green: 0.748, blue: 0.366, alpha: 1.000)
 
@@ -124,9 +124,9 @@ public class KRWDrunkButtonStyleKit : NSObject {
         kRWHomeButtonHousePath.closePath()
         kRWHomeButtonHousePath.lineJoinStyle = kCGLineJoinRound;
 
-        KRWDrunkButtonStyleKit.kRWDrunkButtonColor.setFill()
+        KRWSpotButtonStyleKit.kRWDrunkButtonColor.setFill()
         kRWHomeButtonHousePath.fill()
-        KRWDrunkButtonStyleKit.kRWDrunkButtonColor.setStroke()
+        KRWSpotButtonStyleKit.kRWDrunkButtonColor.setStroke()
         kRWHomeButtonHousePath.lineWidth = 6
         kRWHomeButtonHousePath.stroke()
 
@@ -143,7 +143,65 @@ public class KRWDrunkButtonStyleKit : NSObject {
         kRWHomeButtonHouseDoorPath.fill()
     }
 
-    public class func drawKRWContactButtonNormal() {
+    public class func drawKRWHomeButtonNormal() {
+        //// Color Declarations
+        let kRWHomeButtonColor = UIColor(red: 0.826, green: 0.748, blue: 0.366, alpha: 1.000)
+        let kRWHomeButtonColorClicked = kRWHomeButtonColor.colorWithBrightness(1)
+
+        //// KRWHomeButton Drawing
+        var kRWHomeButtonPath = UIBezierPath()
+        kRWHomeButtonPath.moveToPoint(CGPointMake(10, 90))
+        kRWHomeButtonPath.addLineToPoint(CGPointMake(90, 90))
+        kRWHomeButtonPath.addLineToPoint(CGPointMake(90, 10))
+        kRWHomeButtonPath.addLineToPoint(CGPointMake(10, 10))
+        kRWHomeButtonPath.addLineToPoint(CGPointMake(10, 90))
+        kRWHomeButtonPath.closePath()
+        kRWHomeButtonPath.lineJoinStyle = kCGLineJoinRound;
+
+        kRWHomeButtonColorClicked.setFill()
+        kRWHomeButtonPath.fill()
+        kRWHomeButtonColorClicked.setStroke()
+        kRWHomeButtonPath.lineWidth = 20
+        kRWHomeButtonPath.stroke()
+
+
+        //// KRWHomeButtonHouse Drawing
+        var kRWHomeButtonHousePath = UIBezierPath()
+        kRWHomeButtonHousePath.moveToPoint(CGPointMake(50.5, 13.5))
+        kRWHomeButtonHousePath.addCurveToPoint(CGPointMake(80.62, 39.77), controlPoint1: CGPointMake(50.5, 13.5), controlPoint2: CGPointMake(80.62, 39.77))
+        kRWHomeButtonHousePath.addCurveToPoint(CGPointMake(80.56, 39.99), controlPoint1: CGPointMake(80.62, 39.77), controlPoint2: CGPointMake(80.6, 39.84))
+        kRWHomeButtonHousePath.addLineToPoint(CGPointMake(81, 39.99))
+        kRWHomeButtonHousePath.addLineToPoint(CGPointMake(81, 83))
+        kRWHomeButtonHousePath.addLineToPoint(CGPointMake(20, 83))
+        kRWHomeButtonHousePath.addLineToPoint(CGPointMake(20, 39.99))
+        kRWHomeButtonHousePath.addLineToPoint(CGPointMake(20.44, 39.99))
+        kRWHomeButtonHousePath.addCurveToPoint(CGPointMake(20.38, 39.77), controlPoint1: CGPointMake(20.4, 39.84), controlPoint2: CGPointMake(20.38, 39.77))
+        kRWHomeButtonHousePath.addCurveToPoint(CGPointMake(27.72, 33.37), controlPoint1: CGPointMake(20.38, 39.77), controlPoint2: CGPointMake(23.49, 37.05))
+        kRWHomeButtonHousePath.addCurveToPoint(CGPointMake(50.5, 13.5), controlPoint1: CGPointMake(36.63, 25.59), controlPoint2: CGPointMake(50.5, 13.5))
+        kRWHomeButtonHousePath.addLineToPoint(CGPointMake(50.5, 13.5))
+        kRWHomeButtonHousePath.closePath()
+        kRWHomeButtonHousePath.lineJoinStyle = kCGLineJoinRound;
+
+        KRWSpotButtonStyleKit.kRWDrunkButtonColorClicked.setFill()
+        kRWHomeButtonHousePath.fill()
+        KRWSpotButtonStyleKit.kRWDrunkButtonColorClicked.setStroke()
+        kRWHomeButtonHousePath.lineWidth = 6
+        kRWHomeButtonHousePath.stroke()
+
+
+        //// KRWHomeButtonHouseWindow Drawing
+        let kRWHomeButtonHouseWindowPath = UIBezierPath(roundedRect: CGRectMake(27, 45, 19, 17), cornerRadius: 4)
+        kRWHomeButtonColorClicked.setFill()
+        kRWHomeButtonHouseWindowPath.fill()
+
+
+        //// KRWHomeButtonHouseDoor Drawing
+        let kRWHomeButtonHouseDoorPath = UIBezierPath(roundedRect: CGRectMake(55, 45, 19, 33), cornerRadius: 4)
+        kRWHomeButtonColorClicked.setFill()
+        kRWHomeButtonHouseDoorPath.fill()
+    }
+
+    public class func drawKRWContactButtonClicked() {
         //// Color Declarations
         let kRWHomeButtonColor = UIColor(red: 0.826, green: 0.748, blue: 0.366, alpha: 1.000)
         let kRWContactButtonColor = UIColor(red: 0.820, green: 0.339, blue: 0.339, alpha: 1.000)
@@ -165,25 +223,64 @@ public class KRWDrunkButtonStyleKit : NSObject {
         kRWContactButtonPath.stroke()
 
 
-        //// Oval 2 Drawing
-        var oval2Path = UIBezierPath()
-        oval2Path.moveToPoint(CGPointMake(74.49, 89.47))
-        oval2Path.addCurveToPoint(CGPointMake(74.73, 61.59), controlPoint1: CGPointMake(91.5, 88.77), controlPoint2: CGPointMake(88.01, 70.39))
-        oval2Path.addCurveToPoint(CGPointMake(26.62, 61.59), controlPoint1: CGPointMake(61.44, 52.8), controlPoint2: CGPointMake(39.9, 52.8))
-        oval2Path.addCurveToPoint(CGPointMake(26.86, 89.47), controlPoint1: CGPointMake(13.33, 70.39), controlPoint2: CGPointMake(8.15, 88.77))
-        oval2Path.addCurveToPoint(CGPointMake(74.49, 89.47), controlPoint1: CGPointMake(45.57, 90.18), controlPoint2: CGPointMake(57.48, 90.18))
-        oval2Path.closePath()
+        //// KRWContactButtonBody Drawing
+        var kRWContactButtonBodyPath = UIBezierPath()
+        kRWContactButtonBodyPath.moveToPoint(CGPointMake(74.49, 89.47))
+        kRWContactButtonBodyPath.addCurveToPoint(CGPointMake(74.73, 61.59), controlPoint1: CGPointMake(91.5, 88.77), controlPoint2: CGPointMake(88.01, 70.39))
+        kRWContactButtonBodyPath.addCurveToPoint(CGPointMake(26.62, 61.59), controlPoint1: CGPointMake(61.44, 52.8), controlPoint2: CGPointMake(39.9, 52.8))
+        kRWContactButtonBodyPath.addCurveToPoint(CGPointMake(26.86, 89.47), controlPoint1: CGPointMake(13.33, 70.39), controlPoint2: CGPointMake(8.15, 88.77))
+        kRWContactButtonBodyPath.addCurveToPoint(CGPointMake(74.49, 89.47), controlPoint1: CGPointMake(45.57, 90.18), controlPoint2: CGPointMake(57.48, 90.18))
+        kRWContactButtonBodyPath.closePath()
         kRWHomeButtonColor.setFill()
-        oval2Path.fill()
+        kRWContactButtonBodyPath.fill()
 
 
-        //// Oval Drawing
-        var ovalPath = UIBezierPath(ovalInRect: CGRectMake(33.5, 15.5, 34, 34))
+        //// KRWContactButtonHead Drawing
+        var kRWContactButtonHeadPath = UIBezierPath(ovalInRect: CGRectMake(33.5, 15.5, 34, 34))
         kRWHomeButtonColor.setFill()
-        ovalPath.fill()
-        UIColor.lightGrayColor().setStroke()
-        ovalPath.lineWidth = 1
-        ovalPath.stroke()
+        kRWContactButtonHeadPath.fill()
+    }
+
+    public class func drawKRWContactButtonNormal() {
+        //// Color Declarations
+        let kRWHomeButtonColor = UIColor(red: 0.826, green: 0.748, blue: 0.366, alpha: 1.000)
+        let kRWHomeButtonColorClicked = kRWHomeButtonColor.colorWithBrightness(1)
+        let kRWContactButtonColor = UIColor(red: 0.820, green: 0.339, blue: 0.339, alpha: 1.000)
+        let kRWContactButtonColorClicked = kRWContactButtonColor.colorWithBrightness(1)
+
+        //// KRWContactButton Drawing
+        var kRWContactButtonPath = UIBezierPath()
+        kRWContactButtonPath.moveToPoint(CGPointMake(10, 90))
+        kRWContactButtonPath.addLineToPoint(CGPointMake(90, 90))
+        kRWContactButtonPath.addLineToPoint(CGPointMake(90, 10))
+        kRWContactButtonPath.addLineToPoint(CGPointMake(10, 10))
+        kRWContactButtonPath.addLineToPoint(CGPointMake(10, 90))
+        kRWContactButtonPath.closePath()
+        kRWContactButtonPath.lineJoinStyle = kCGLineJoinRound;
+
+        kRWContactButtonColorClicked.setFill()
+        kRWContactButtonPath.fill()
+        kRWContactButtonColorClicked.setStroke()
+        kRWContactButtonPath.lineWidth = 20
+        kRWContactButtonPath.stroke()
+
+
+        //// KRWContactButtonBody Drawing
+        var kRWContactButtonBodyPath = UIBezierPath()
+        kRWContactButtonBodyPath.moveToPoint(CGPointMake(74.49, 89.47))
+        kRWContactButtonBodyPath.addCurveToPoint(CGPointMake(74.73, 61.59), controlPoint1: CGPointMake(91.5, 88.77), controlPoint2: CGPointMake(88.01, 70.39))
+        kRWContactButtonBodyPath.addCurveToPoint(CGPointMake(26.62, 61.59), controlPoint1: CGPointMake(61.44, 52.8), controlPoint2: CGPointMake(39.9, 52.8))
+        kRWContactButtonBodyPath.addCurveToPoint(CGPointMake(26.86, 89.47), controlPoint1: CGPointMake(13.33, 70.39), controlPoint2: CGPointMake(8.15, 88.77))
+        kRWContactButtonBodyPath.addCurveToPoint(CGPointMake(74.49, 89.47), controlPoint1: CGPointMake(45.57, 90.18), controlPoint2: CGPointMake(57.48, 90.18))
+        kRWContactButtonBodyPath.closePath()
+        kRWHomeButtonColorClicked.setFill()
+        kRWContactButtonBodyPath.fill()
+
+
+        //// KRWContactButtonHead Drawing
+        var kRWContactButtonHeadPath = UIBezierPath(ovalInRect: CGRectMake(33.5, 15.5, 34, 34))
+        kRWHomeButtonColorClicked.setFill()
+        kRWContactButtonHeadPath.fill()
     }
 
 }
