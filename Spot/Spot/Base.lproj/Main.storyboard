@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iEx-6o-Wn2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C81h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iEx-6o-Wn2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6246"/>
     </dependencies>
@@ -13,6 +13,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="h3u-OV-4WN">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="Dg2-xK-zOn" kind="relationship" relationship="rootViewController" id="Q7s-4G-wdd"/>
                     </connections>
@@ -24,6 +27,7 @@
         <!--Spot-->
         <scene sceneID="zhS-gM-MMx">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gpG-iN-go9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Dg2-xK-zOn" customClass="SoberViewController" customModule="Spot" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g2V-t1-4uD"/>
@@ -33,67 +37,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jv5-jy-Y1f">
-                                <rect key="frame" x="79" y="234" width="163" height="30"/>
-                                <state key="normal" title="Take Picture">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jv5-jy-Y1f" customClass="KRWHomeButton" customModule="Spot" customModuleProvider="target">
+                                <rect key="frame" x="110" y="218" width="100" height="100"/>
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fzq-DV-SiH">
-                                <rect key="frame" x="79" y="342" width="163" height="30"/>
-                                <state key="normal" title="Switch to Drunk-Mode">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="YMo-fC-dCW" kind="show" id="cgL-Vr-mjT"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1VW-QM-ePz">
-                                <rect key="frame" x="79" y="196" width="163" height="30"/>
-                                <state key="normal" title="Set Emergency Contact">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1VW-QM-ePz" customClass="KRWContactButton" customModule="Spot" customModuleProvider="target">
+                                <rect key="frame" x="110" y="95" width="100" height="100"/>
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="setEmergencyContact:" destination="Dg2-xK-zOn" eventType="touchUpInside" id="1HD-ec-F4F"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9k-HS-sMF">
-                                <rect key="frame" x="70" y="147" width="180" height="30"/>
-                                <state key="normal" title="PhoneNumberPlaceholder">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fzq-DV-SiH" customClass="KRWDrunkButton" customModule="Spot" customModuleProvider="target">
+                                <rect key="frame" x="35" y="353" width="250" height="50"/>
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="callPhoneNumber:" destination="Dg2-xK-zOn" eventType="touchUpInside" id="iLY-0J-ZeN"/>
+                                    <segue destination="YMo-fC-dCW" kind="show" id="cgL-Vr-mjT"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="1VW-QM-ePz" firstAttribute="top" secondItem="S9k-HS-sMF" secondAttribute="bottom" constant="19" id="3bb-2O-Qfd"/>
-                            <constraint firstItem="Jv5-jy-Y1f" firstAttribute="top" secondItem="1VW-QM-ePz" secondAttribute="bottom" constant="8" symbolic="YES" id="9rg-Jr-HD9"/>
-                            <constraint firstItem="S9k-HS-sMF" firstAttribute="top" secondItem="g2V-t1-4uD" secondAttribute="bottom" constant="83" id="CY6-he-o2w"/>
-                            <constraint firstItem="1VW-QM-ePz" firstAttribute="trailing" secondItem="Jv5-jy-Y1f" secondAttribute="trailing" id="Gdf-so-e5Q"/>
-                            <constraint firstItem="S9k-HS-sMF" firstAttribute="centerX" secondItem="CKN-ys-2Gn" secondAttribute="centerX" id="SEU-8A-OPU"/>
-                            <constraint firstItem="1VW-QM-ePz" firstAttribute="leading" secondItem="Jv5-jy-Y1f" secondAttribute="leading" id="T0I-tz-Uay"/>
-                            <constraint firstItem="Fzq-DV-SiH" firstAttribute="top" secondItem="Jv5-jy-Y1f" secondAttribute="bottom" constant="78" id="TVT-cz-il1"/>
-                            <constraint firstItem="Jv5-jy-Y1f" firstAttribute="leading" secondItem="Fzq-DV-SiH" secondAttribute="leading" id="bqp-Yk-Fsg"/>
-                            <constraint firstItem="1VW-QM-ePz" firstAttribute="centerX" secondItem="S9k-HS-sMF" secondAttribute="centerX" id="rxz-8y-Rg7"/>
-                            <constraint firstItem="Fzq-DV-SiH" firstAttribute="trailing" secondItem="Jv5-jy-Y1f" secondAttribute="trailing" id="xgI-VI-jUP"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Spot" id="n6l-Bj-MpW"/>
-                    <connections>
-                        <outlet property="phoneNumberButton" destination="S9k-HS-sMF" id="6UM-uK-EWq"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gpG-iN-go9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1794" y="-1008"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="yal-gQ-QBM">
             <objects>
-                <viewController id="YMo-fC-dCW" customClass="KRWMapViewController" customModule="Spot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" id="YMo-fC-dCW" customClass="KRWMapViewController" customModule="Spot" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LSb-fS-95s"/>
                         <viewControllerLayoutGuide type="bottom" id="k6O-bR-Rdi"/>
@@ -102,16 +81,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZTh-CR-Tqv">
-                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZTh-CR-Tqv">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="479"/>
                             </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HYl-Ll-nGW">
+                                <rect key="frame" x="0.0" y="435" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" id="QMk-GU-YHP">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lAO-s5-RPX">
+                                            <rect key="frame" x="16" y="7" width="108" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Bring Me Home">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="bringMeHome:" destination="YMo-fC-dCW" eventType="touchUpInside" id="14G-rL-L0X"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem width="119" style="plain" systemItem="fixedSpace" id="Pcd-Aa-U7u"/>
+                                    <barButtonItem style="plain" id="xF2-m9-jBi">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gRC-FA-xau">
+                                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Call">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="callEmergencyContact:" destination="YMo-fC-dCW" eventType="touchUpInside" id="Gw8-Hf-eWb"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="t" id="GWm-ZL-uSH"/>
-                    </toolbarItems>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <toolbarItems/>
                     <connections>
                         <outlet property="mapView" destination="ZTh-CR-Tqv" id="Eyy-Pq-t68"/>
                     </connections>

@@ -8,11 +8,10 @@
 
 import UIKit
 import AddressBookUI
+import CoreData
 
 class SoberViewController: UIViewController, ABPeoplePickerNavigationControllerDelegate, UINavigationControllerDelegate {
     
-    @IBOutlet weak var phoneNumberButton: UIButton!
-
     lazy var charSet = NSCharacterSet(charactersInString: "()- ")
     
     var phoneNumber = String()
@@ -37,7 +36,6 @@ class SoberViewController: UIViewController, ABPeoplePickerNavigationControllerD
 
     func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecord!, property: ABPropertyID, identifier: ABMultiValueIdentifier){
         
-        phoneNumberButton.setTitle(getPhoneNumberOfSelectedPerson(person, identifier: identifier), forState: .Normal)
         phoneNumber = cleanPhoneNumber(getPhoneNumberOfSelectedPerson(person, identifier: identifier) as String)
     }
     
@@ -65,7 +63,32 @@ class SoberViewController: UIViewController, ABPeoplePickerNavigationControllerD
         phoneNumber = phoneNumber.stringByReplacingOccurrencesOfString("+", withString: "00")
         phoneNumber = phoneNumber.stringByReplacingOccurrencesOfString(" ", withString: "")
         phoneNumber = "tel://" + phoneNumber
+        let appDel:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let context:NSManagedObjectContext = appDel.managedObjectContext!
+        
+        var request = NSFetchRequest(entityName: "Number")
+        request.returnsObjectsAsFaults = false
+        var err = NSErrorPointer()
+        
+        var results:NSArray = context.executeFetchRequest(request, error: err)!
+        if results.count > 0 {
+            let loadObject:NSManagedObject = results[0] as NSManagedObject
+            loadObject.setValue(phoneNumber as String, forKey: "number")
+            println("Number saved.")
+            context.save(nil)
+        } else if results.count == 0 {
+            var newObject:NSManagedObject  = NSEntityDescription.insertNewObjectForEntityForName("Number", inManagedObjectContext: context) as NSManagedObject
+            newObject.setValue(phoneNumber as String, forKey: "number")
+            newObject.setPrimitiveValue(0, forKey: "id")
+            context.save(nil)
+            println("New Number saved.")
+        }
+        println(err.debugDescription)
         return phoneNumber
+    }
+    
+    override func preferredInterfaceOrientationForPresentation() -> UIInterfaceOrientation {
+        return UIInterfaceOrientation.Portrait
     }
 
 }

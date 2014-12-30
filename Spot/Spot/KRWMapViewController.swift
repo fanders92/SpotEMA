@@ -9,10 +9,12 @@
 import UIKit
 import CoreLocation
 import MapKit
+import CoreData
 
 class KRWMapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
+    var toolbar = UIToolbar()
     
     let locationManager = CLLocationManager()
     var locationStatus : NSString = "Not Started"
@@ -21,7 +23,9 @@ class KRWMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "toggle:"))
         
+        self.mapView.addSubview(self.toolbar)
         
         if (CLLocationManager.locationServicesEnabled()) {
             // Set current ViewController to the delegate
@@ -89,6 +93,53 @@ class KRWMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
                 NSLog("Denied access: \(locationStatus)")
             }
     }
+    
+    
+    func toggle(sender: AnyObject) {
+        navigationController?.setNavigationBarHidden(navigationController?.navigationBarHidden == false, animated: true) //or animated: false
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return navigationController?.navigationBarHidden == true
+    }
+    
+    override func preferredStatusBarUpdateAnimation() -> UIStatusBarAnimation {
+        return UIStatusBarAnimation.Fade
+    }
+    
+
+    @IBAction func callEmergencyContact(sender: AnyObject) {
+        let appDel:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let context:NSManagedObjectContext = appDel.managedObjectContext!
+        
+        var err = NSErrorPointer()
+        var request = NSFetchRequest(entityName: "Number")
+        request.returnsObjectsAsFaults = false
+        var results:NSArray = context.executeFetchRequest(request, error: err)!
+        if results.count > 0 {
+            let loadObject:NSManagedObject = results[0] as NSManagedObject
+            if let url = NSURL(string:loadObject.valueForKey("number") as String){
+                if UIApplication.sharedApplication().canOpenURL(url){
+                    println(url)
+                    UIApplication.sharedApplication().openURL(url)
+                }
+            }
+        }else if results.count == 0 {
+            // No number saved ... save now?
+        }
+        println(results.count.description)
+        
+    }
+    
+    @IBAction func bringMeHome(sender: AnyObject) {
+        
+    }
+    
+    
+    override func preferredInterfaceOrientationForPresentation() -> UIInterfaceOrientation {
+        return UIInterfaceOrientation.Portrait
+    }
+
 
 }
 
