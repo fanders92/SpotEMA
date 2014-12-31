@@ -131,8 +131,60 @@ class KRWMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         
     }
     
+    func getDestination() -> MKPlacemark? {
+        let appDel:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let context:NSManagedObjectContext = appDel.managedObjectContext!
+        var err = NSErrorPointer()
+        var request = NSFetchRequest(entityName: "Destination")
+        request.returnsObjectsAsFaults = false
+        var results:NSArray = context.executeFetchRequest(request, error: err)!
+        if results.count > 0 {
+            let loadObject:NSManagedObject = results[0] as NSManagedObject
+            var long:Double = loadObject.valueForKey("longitude") as Double
+            var lat:Double = loadObject.valueForKey("latitude") as Double
+            return MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: lat, longitude: long), addressDictionary: nil)
+        }else if results.count == 0 {
+            // No Destination saved ... save now?
+        }
+        return nil
+    }
+    
     @IBAction func bringMeHome(sender: AnyObject) {
+        let request = MKDirectionsRequest()
+        request.setSource(MKMapItem.mapItemForCurrentLocation())
+        var destination: MKMapItem = MKMapItem(placemark: getDestination())
+        request.setDestination(destination)
+        request.requestsAlternateRoutes = false
         
+        let directions = MKDirections(request: request)
+        
+        directions.calculateDirectionsWithCompletionHandler({(response:
+            MKDirectionsResponse!, error: NSError!) in
+            
+            if error != nil {
+                // Handle error
+            } else {
+                self.showRoute(response)
+            }
+            
+        })
+    }
+    
+    func showRoute(response: MKDirectionsResponse) {
+        
+        for route in response.routes as [MKRoute] {
+            
+            self.mapView.addOverlay(route.polyline, level: MKOverlayLevel.AboveRoads)
+            
+            for step in route.steps {
+                println(step.instructions as String)
+            }
+        }
+        let userLocation = self.mapView.userLocation
+        let region = MKCoordinateRegionMakeWithDistance(
+            userLocation.location.coordinate, 2000, 2000)
+        
+        self.mapView.setRegion(region, animated: true)
     }
     
     override func supportedInterfaceOrientations() -> Int {

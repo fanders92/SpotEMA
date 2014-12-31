@@ -73,7 +73,6 @@ class SoberViewController: UIViewController, ABPeoplePickerNavigationControllerD
             context.save(nil)
             println("New Number saved.")
         }
-        println(err.debugDescription)
         return phoneNumber
     }
     
