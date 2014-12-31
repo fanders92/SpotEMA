@@ -135,11 +135,9 @@ class KRWMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         
     }
     
-    
-    override func preferredInterfaceOrientationForPresentation() -> UIInterfaceOrientation {
-        return UIInterfaceOrientation.Portrait
+    override func supportedInterfaceOrientations() -> Int {
+        return Int(UIInterfaceOrientationMask.Portrait.rawValue)
     }
-
 
 }
 

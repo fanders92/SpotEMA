@@ -27,7 +27,7 @@ class SoberViewController: UIViewController, ABPeoplePickerNavigationControllerD
     }
     
 
-    @IBAction func setEmergencyContact(sender: UIButton) {
+    @IBAction func setEmergencyContact(sender: KRWContactButton) {
         let abController = ABPeoplePickerNavigationController()
         abController.peoplePickerDelegate = self
         abController.displayedProperties = [NSNumber(int: kABPersonPhoneProperty)]
@@ -37,16 +37,6 @@ class SoberViewController: UIViewController, ABPeoplePickerNavigationControllerD
     func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecord!, property: ABPropertyID, identifier: ABMultiValueIdentifier){
         
         phoneNumber = cleanPhoneNumber(getPhoneNumberOfSelectedPerson(person, identifier: identifier) as String)
-    }
-    
-    @IBAction func callPhoneNumber(sender: UIButton) {
-        println(phoneNumber)
-        if let url = NSURL(string:phoneNumber){
-            if UIApplication.sharedApplication().canOpenURL(url){
-                println(url)
-                UIApplication.sharedApplication().openURL(url)
-            }
-        }
     }
     
     func getPhoneNumberOfSelectedPerson(person: ABRecord, identifier: ABMultiValueIdentifier) -> String {
@@ -87,8 +77,12 @@ class SoberViewController: UIViewController, ABPeoplePickerNavigationControllerD
         return phoneNumber
     }
     
-    override func preferredInterfaceOrientationForPresentation() -> UIInterfaceOrientation {
-        return UIInterfaceOrientation.Portrait
+    override func supportedInterfaceOrientations() -> Int {
+        return Int(UIInterfaceOrientationMask.Portrait.rawValue)
+    }
+    
+    @IBAction func updateButtonStyleDown(sender: UIButton) {
+        sender.setNeedsDisplay()
     }
 
 }

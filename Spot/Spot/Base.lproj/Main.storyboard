@@ -37,28 +37,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jv5-jy-Y1f" customClass="KRWHomeButton" customModule="Spot" customModuleProvider="target">
-                                <rect key="frame" x="110" y="218" width="100" height="100"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1VW-QM-ePz" customClass="KRWContactButton" customModule="Spot" customModuleProvider="target">
-                                <rect key="frame" x="110" y="95" width="100" height="100"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="setEmergencyContact:" destination="Dg2-xK-zOn" eventType="touchUpInside" id="1HD-ec-F4F"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fzq-DV-SiH" customClass="KRWDrunkButton" customModule="Spot" customModuleProvider="target">
                                 <rect key="frame" x="35" y="353" width="250" height="50"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="updateButtonStyleDown:" destination="Dg2-xK-zOn" eventType="touchCancel" id="FOT-ny-kb9"/>
+                                    <action selector="updateButtonStyleDown:" destination="Dg2-xK-zOn" eventType="touchUpInside" id="TCv-0n-pV1"/>
+                                    <action selector="updateButtonStyleDown:" destination="Dg2-xK-zOn" eventType="touchDown" id="XbE-fP-ICf"/>
+                                    <action selector="updateButtonStyleDown:" destination="Dg2-xK-zOn" eventType="touchUpOutside" id="zwP-uO-4aj"/>
                                     <segue destination="YMo-fC-dCW" kind="show" id="cgL-Vr-mjT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gS-bu-5Hz" customClass="KRWContactButton" customModule="Spot" customModuleProvider="target">
+                                <rect key="frame" x="110" y="96" width="100" height="100"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="setEmergencyContact:" destination="Dg2-xK-zOn" eventType="touchUpInside" id="pwv-WS-Qon"/>
+                                    <action selector="updateButtonStyleDown:" destination="Dg2-xK-zOn" eventType="touchUpInside" id="A7f-uo-KKJ"/>
+                                    <action selector="updateButtonStyleDown:" destination="Dg2-xK-zOn" eventType="touchDown" id="PUE-H4-Bma"/>
+                                    <action selector="updateButtonStyleDown:" destination="Dg2-xK-zOn" eventType="touchUpOutside" id="g22-at-0fT"/>
+                                    <action selector="updateButtonStyleDown:" destination="Dg2-xK-zOn" eventType="touchCancel" id="gAr-Yj-tRR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jv5-jy-Y1f" customClass="KRWHomeButton" customModule="Spot" customModuleProvider="target">
+                                <rect key="frame" x="110" y="218" width="100" height="100"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateButtonStyleDown:" destination="Dg2-xK-zOn" eventType="touchUpInside" id="B0h-OG-ePP"/>
+                                    <action selector="updateButtonStyleDown:" destination="Dg2-xK-zOn" eventType="touchCancel" id="N5X-25-u0H"/>
+                                    <action selector="updateButtonStyleDown:" destination="Dg2-xK-zOn" eventType="touchDown" id="Ryf-1h-7eS"/>
+                                    <action selector="updateButtonStyleDown:" destination="Dg2-xK-zOn" eventType="touchUpOutside" id="jYC-px-jNn"/>
+                                    <segue destination="9Kf-3N-r9Y" kind="popoverPresentation" popoverAnchorView="Jv5-jy-Y1f" id="RYM-cc-6dv">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
                                 </connections>
                             </button>
                         </subviews>
@@ -68,6 +85,25 @@
                 </viewController>
             </objects>
             <point key="canvasLocation" x="-1794" y="-1008"/>
+        </scene>
+        <!--Camera Controller-->
+        <scene sceneID="PJt-7o-jeb">
+            <objects>
+                <viewController id="9Kf-3N-r9Y" customClass="KRWCameraController" customModule="Spot" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZrF-Kd-CaG"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lmg-4I-FCo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rw3-Sz-TRr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q5E-rz-FBt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1794" y="-328"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="yal-gQ-QBM">
@@ -88,10 +124,10 @@
                                 <rect key="frame" x="0.0" y="435" width="320" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" id="QMk-GU-YHP">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lAO-s5-RPX">
-                                            <rect key="frame" x="16" y="7" width="108" height="30"/>
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lAO-s5-RPX" customClass="KRWHomeButtonSmall" customModule="Spot" customModuleProvider="target">
+                                            <rect key="frame" x="16" y="7" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Bring Me Home">
+                                            <state key="normal">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -99,12 +135,12 @@
                                             </connections>
                                         </button>
                                     </barButtonItem>
-                                    <barButtonItem width="119" style="plain" systemItem="fixedSpace" id="Pcd-Aa-U7u"/>
+                                    <barButtonItem width="215" style="plain" systemItem="fixedSpace" id="Pcd-Aa-U7u"/>
                                     <barButtonItem style="plain" id="xF2-m9-jBi">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gRC-FA-xau">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gRC-FA-xau" customClass="KRWCallButton" customModule="Spot" customModuleProvider="target">
                                             <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Call">
+                                            <state key="normal">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
