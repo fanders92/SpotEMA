@@ -8,7 +8,6 @@
         <scene sceneID="xXg-MR-6My">
             <objects>
                 <navigationController id="iEx-6o-Wn2" sceneMemberID="viewController">
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eOU-VA-YkL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -38,6 +37,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="42m-Gp-DMD">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fzq-DV-SiH" customClass="KRWDrunkButton" customModule="Spot" customModuleProvider="target">
                                 <rect key="frame" x="35" y="353" width="250" height="50"/>
                                 <state key="normal">
@@ -83,6 +85,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Spot" id="n6l-Bj-MpW"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <outlet property="backgroundImage" destination="42m-Gp-DMD" id="cJ4-74-vIN"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="-1794" y="-1008"/>

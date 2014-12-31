@@ -14,11 +14,18 @@ class SoberViewController: UIViewController, ABPeoplePickerNavigationControllerD
     
     lazy var charSet = NSCharacterSet(charactersInString: "()- ")
     
+    @IBOutlet weak var backgroundImage: UIImageView!
     var phoneNumber = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.backgroundImage.backgroundColor = UIColor(red: 0.6, green: 0.4, blue: 0.2, alpha: 1)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     override func didReceiveMemoryWarning() {

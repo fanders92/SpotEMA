@@ -401,7 +401,7 @@ public class KRWSpotButtonStyleKit : NSObject {
     public class func drawKRWCallButton2Normal() {
         //// Color Declarations
         let kRWCallButtonColor = UIColor(red: 0.311, green: 0.767, blue: 0.475, alpha: 1.000)
-        let color = kRWCallButtonColor.colorWithBrightness(0.9)
+        let kRWCallButtonColorClicked = kRWCallButtonColor.colorWithBrightness(0.9)
 
         //// KRWCallButton2 Drawing
         var kRWCallButton2Path = UIBezierPath()
@@ -413,9 +413,9 @@ public class KRWSpotButtonStyleKit : NSObject {
         kRWCallButton2Path.closePath()
         kRWCallButton2Path.lineJoinStyle = kCGLineJoinRound;
 
-        color.setFill()
+        kRWCallButtonColorClicked.setFill()
         kRWCallButton2Path.fill()
-        color.setStroke()
+        kRWCallButtonColorClicked.setStroke()
         kRWCallButton2Path.lineWidth = 6
         kRWCallButton2Path.stroke()
 
@@ -445,7 +445,7 @@ public class KRWSpotButtonStyleKit : NSObject {
     public class func drawKRWCallButtonNormal() {
         //// Color Declarations
         let kRWCallButtonColor = UIColor(red: 0.311, green: 0.767, blue: 0.475, alpha: 1.000)
-        let color = kRWCallButtonColor.colorWithBrightness(0.9)
+        let kRWCallButtonColorClicked = kRWCallButtonColor.colorWithBrightness(0.9)
 
         //// KRWCallButton Drawing
         var kRWCallButtonPath = UIBezierPath()
@@ -457,9 +457,9 @@ public class KRWSpotButtonStyleKit : NSObject {
         kRWCallButtonPath.closePath()
         kRWCallButtonPath.lineJoinStyle = kCGLineJoinRound;
 
-        color.setFill()
+        kRWCallButtonColorClicked.setFill()
         kRWCallButtonPath.fill()
-        color.setStroke()
+        kRWCallButtonColorClicked.setStroke()
         kRWCallButtonPath.lineWidth = 6
         kRWCallButtonPath.stroke()
 
