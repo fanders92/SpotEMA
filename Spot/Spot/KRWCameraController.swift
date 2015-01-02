@@ -17,7 +17,6 @@ class KRWCameraController: UIViewController, CLLocationManagerDelegate {
     //@IBOutlet weak var btnSnapPicture: KRWCameraButton!
     
     var btnSnapPicture:KRWCameraButton = KRWCameraButton()
-    var dismissButton:UIButton = UIButton()
     
 //    var sepGesture:UIPanGestureRecognizer?
     
@@ -42,16 +41,14 @@ class KRWCameraController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.hidesBarsOnTap = true
+        
         self.view.backgroundColor = UIColor.blackColor()
         self.assLib = ALAssetsLibrary()
         self.btnSnapPicture.bounds = CGRectMake(0, 0, 75, 75)
         self.btnSnapPicture.center = CGPointMake(self.view.center.x, self.view.frame.height - 40)
         self.btnSnapPicture.addTarget(self, action: "takePhoto:", forControlEvents: UIControlEvents.TouchUpInside)
         self.btnSnapPicture.addTarget(self, action: "updateButtonStyleDown:", forControlEvents: UIControlEvents.TouchDown)
-        self.dismissButton.setTitle("Done", forState: .Normal)
-        self.dismissButton.bounds = CGRectMake(0,0,50,30)
-        self.dismissButton.center = CGPointMake(30, 30)
-        self.dismissButton.addTarget(self, action: "btnDoneClicked:", forControlEvents: .TouchUpInside)
         self.cameraView.userInteractionEnabled = true
         self.cameraView.bounds = self.view.bounds
         self.cameraView.center = self.view.center
@@ -76,7 +73,6 @@ class KRWCameraController: UIViewController, CLLocationManagerDelegate {
             self.previewLayer?.position = CGPointMake(CGRectGetMidX(self.cameraView.bounds), CGRectGetMidY(self.cameraView.bounds))
             self.cameraView.layer.addSublayer(self.previewLayer)
             self.cameraView.addSubview(self.btnSnapPicture)
-            self.cameraView.addSubview(self.dismissButton)
         } else {
             println("Error: " + error.debugDescription)
         }
@@ -207,10 +203,6 @@ class KRWCameraController: UIViewController, CLLocationManagerDelegate {
             }, failureBlock: {
                 (error: NSError!) in
         })
-    }
-    
-    func btnDoneClicked(sender: UIButton) {
-        dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func supportedInterfaceOrientations() -> Int {

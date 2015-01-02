@@ -8,6 +8,7 @@
         <scene sceneID="xXg-MR-6My">
             <objects>
                 <navigationController id="iEx-6o-Wn2" sceneMemberID="viewController">
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eOU-VA-YkL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -27,7 +28,6 @@
         <!--Spot-->
         <scene sceneID="zhS-gM-MMx">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gpG-iN-go9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Dg2-xK-zOn" customClass="SoberViewController" customModule="Spot" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g2V-t1-4uD"/>
@@ -72,27 +72,26 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="setHomeAdress:" destination="Dg2-xK-zOn" eventType="touchUpInside" id="bC0-HY-Gsb"/>
                                     <action selector="updateButtonStyleDown:" destination="Dg2-xK-zOn" eventType="touchUpInside" id="B0h-OG-ePP"/>
                                     <action selector="updateButtonStyleDown:" destination="Dg2-xK-zOn" eventType="touchCancel" id="N5X-25-u0H"/>
                                     <action selector="updateButtonStyleDown:" destination="Dg2-xK-zOn" eventType="touchDown" id="Ryf-1h-7eS"/>
                                     <action selector="updateButtonStyleDown:" destination="Dg2-xK-zOn" eventType="touchUpOutside" id="jYC-px-jNn"/>
-                                    <segue destination="9Kf-3N-r9Y" kind="popoverPresentation" popoverAnchorView="Jv5-jy-Y1f" id="RYM-cc-6dv">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Spot" id="n6l-Bj-MpW"/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="backgroundImage" destination="42m-Gp-DMD" id="cJ4-74-vIN"/>
+                        <segue destination="9Kf-3N-r9Y" kind="show" identifier="camera" id="NhM-cp-1T1"/>
+                        <segue destination="fID-gJ-szg" kind="show" identifier="manual" id="kQq-dz-UJy"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gpG-iN-go9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1794" y="-1008"/>
+            <point key="canvasLocation" x="-1778" y="-1008"/>
         </scene>
         <!--Camera Controller-->
         <scene sceneID="PJt-7o-jeb">
@@ -107,16 +106,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q5E-rz-FBt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1794" y="-328"/>
+            <point key="canvasLocation" x="-1778" y="-324"/>
+        </scene>
+        <!--Address Controller-->
+        <scene sceneID="adO-N6-Hgr">
+            <objects>
+                <tableViewController id="fID-gJ-szg" customClass="KRWAddressController" customModule="Spot" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="glj-nY-ddc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="address" id="fkx-3u-W3j">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fkx-3u-W3j" id="Hhz-Ax-1vE">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fID-gJ-szg" id="F2v-W8-vc4"/>
+                            <outlet property="delegate" destination="fID-gJ-szg" id="E5F-mh-fxu"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J0V-zZ-r5T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1268" y="-1563"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="yal-gQ-QBM">
             <objects>
-                <viewController modalTransitionStyle="flipHorizontal" id="YMo-fC-dCW" customClass="KRWMapViewController" customModule="Spot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="YMo-fC-dCW" customClass="KRWMapViewController" customModule="Spot" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LSb-fS-95s"/>
                         <viewControllerLayoutGuide type="bottom" id="k6O-bR-Rdi"/>

@@ -21,11 +21,13 @@ class SoberViewController: UIViewController, ABPeoplePickerNavigationControllerD
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.navigationController?.hidesBarsOnTap = false
         self.backgroundImage.backgroundColor = UIColor(red: 0.6, green: 0.4, blue: 0.2, alpha: 1)
     }
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.navigationController?.hidesBarsOnTap = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,6 +35,23 @@ class SoberViewController: UIViewController, ABPeoplePickerNavigationControllerD
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func setHomeAdress(sender: AnyObject) {
+        let optionMenu = UIAlertController(title: nil, message: "Choose", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        let cameraOption = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default) { (alert: UIAlertAction!) -> Void in
+            self.performSegueWithIdentifier("camera", sender: self)
+        }
+        let addressOption = UIAlertAction(title: "Manual", style: UIAlertActionStyle.Default) { (alert: UIAlertAction!) -> Void in
+            self.performSegueWithIdentifier("manual", sender: self)
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, nil)
+        optionMenu.addAction(cameraOption)
+        optionMenu.addAction(addressOption)
+        optionMenu.addAction(cancel)
+        self.presentViewController(optionMenu, animated: true) { () -> Void in
+            println("OptionMenu")
+        }
+        
+    }
 
     @IBAction func setEmergencyContact(sender: KRWContactButton) {
         let abController = ABPeoplePickerNavigationController()

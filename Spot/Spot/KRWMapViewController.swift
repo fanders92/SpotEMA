@@ -22,8 +22,8 @@ class KRWMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "toggle:"))
+        self.navigationController?.hidesBarsOnTap = true
+        //self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "toggle:"))
         
         self.mapView.addSubview(self.toolbar)
         
@@ -95,13 +95,13 @@ class KRWMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     }
     
     
-    func toggle(sender: AnyObject) {
-        navigationController?.setNavigationBarHidden(navigationController?.navigationBarHidden == false, animated: true) //or animated: false
-    }
-    
-    override func prefersStatusBarHidden() -> Bool {
-        return navigationController?.navigationBarHidden == true
-    }
+//    func toggle(sender: AnyObject) {
+//        navigationController?.setNavigationBarHidden(navigationController?.navigationBarHidden == false, animated: true) //or animated: false
+//    }
+//    
+//    override func prefersStatusBarHidden() -> Bool {
+//        return navigationController?.navigationBarHidden == true
+//    }
     
     override func preferredStatusBarUpdateAnimation() -> UIStatusBarAnimation {
         return UIStatusBarAnimation.Fade
