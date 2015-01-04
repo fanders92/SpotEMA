@@ -16,6 +16,7 @@
 		C89C0A1E1A53760F0069CCD6 /* KRWCameraButtonStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89C0A1D1A53760F0069CCD6 /* KRWCameraButtonStyleKit.swift */; };
 		C89C0A201A5376E50069CCD6 /* KRWCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89C0A1F1A5376E50069CCD6 /* KRWCameraController.swift */; };
 		C89C0A241A561FEA0069CCD6 /* KRWAddressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89C0A231A561FEA0069CCD6 /* KRWAddressController.swift */; };
+		C89C0A261A57FBB20069CCD6 /* KRWTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89C0A251A57FBB20069CCD6 /* KRWTableViewCell.swift */; };
 		C8ACE3761A2CFFC700F968CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ACE3751A2CFFC700F968CD /* AppDelegate.swift */; };
 		C8ACE3781A2CFFC700F968CD /* KRWMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ACE3771A2CFFC700F968CD /* KRWMapViewController.swift */; };
 		C8ACE37B1A2CFFC700F968CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8ACE3791A2CFFC700F968CD /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		C89C0A1D1A53760F0069CCD6 /* KRWCameraButtonStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KRWCameraButtonStyleKit.swift; sourceTree = "<group>"; };
 		C89C0A1F1A5376E50069CCD6 /* KRWCameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KRWCameraController.swift; sourceTree = "<group>"; };
 		C89C0A231A561FEA0069CCD6 /* KRWAddressController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KRWAddressController.swift; sourceTree = "<group>"; };
+		C89C0A251A57FBB20069CCD6 /* KRWTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KRWTableViewCell.swift; sourceTree = "<group>"; };
 		C8ACE3701A2CFFC700F968CD /* Spot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8ACE3741A2CFFC700F968CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8ACE3751A2CFFC700F968CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				C89C0A111A531E330069CCD6 /* KRWButtons.swift */,
 				C89C0A1F1A5376E50069CCD6 /* KRWCameraController.swift */,
 				C8ACE3771A2CFFC700F968CD /* KRWMapViewController.swift */,
+				C89C0A251A57FBB20069CCD6 /* KRWTableViewCell.swift */,
 				C89C0A231A561FEA0069CCD6 /* KRWAddressController.swift */,
 				172CB1681A3AD98E00E0B88F /* SoberViewController.swift */,
 				C8ACE3791A2CFFC700F968CD /* Main.storyboard */,
@@ -250,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C89C0A261A57FBB20069CCD6 /* KRWTableViewCell.swift in Sources */,
 				C8ACE3781A2CFFC700F968CD /* KRWMapViewController.swift in Sources */,
 				C89C0A1E1A53760F0069CCD6 /* KRWCameraButtonStyleKit.swift in Sources */,
 				C89C0A0E1A53058E0069CCD6 /* KRWDataSpot.xcdatamodeld in Sources */,

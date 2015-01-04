@@ -141,6 +141,7 @@ class KRWCameraController: UIViewController, CLLocationManagerDelegate {
                         
                         let imageData = UIImagePNGRepresentation(pickedImage)
                         UIImageWriteToSavedPhotosAlbum(pickedImage, nil, nil, nil)
+                        
                         let appDel:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
                         let context:NSManagedObjectContext = appDel.managedObjectContext!
                         

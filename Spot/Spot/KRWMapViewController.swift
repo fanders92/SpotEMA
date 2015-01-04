@@ -99,9 +99,9 @@ class KRWMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
 //        navigationController?.setNavigationBarHidden(navigationController?.navigationBarHidden == false, animated: true) //or animated: false
 //    }
 //    
-//    override func prefersStatusBarHidden() -> Bool {
-//        return navigationController?.navigationBarHidden == true
-//    }
+    override func prefersStatusBarHidden() -> Bool {
+        return navigationController?.navigationBarHidden == true
+    }
     
     override func preferredStatusBarUpdateAnimation() -> UIStatusBarAnimation {
         return UIStatusBarAnimation.Fade
@@ -142,6 +142,15 @@ class KRWMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
             let loadObject:NSManagedObject = results[0] as NSManagedObject
             var long:Double = loadObject.valueForKey("longitude") as Double
             var lat:Double = loadObject.valueForKey("latitude") as Double
+            let geocoder = CLGeocoder()
+            geocoder.reverseGeocodeLocation(CLLocation(latitude: lat, longitude: long), completionHandler: {(places: [AnyObject]!, error:NSError!) -> Void in
+                for place in places {
+                    println("################")
+                    println(place.name)
+                    println("################")
+                }
+            })
+            
             return MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: lat, longitude: long), addressDictionary: nil)
         }else if results.count == 0 {
             // No Destination saved ... save now?
