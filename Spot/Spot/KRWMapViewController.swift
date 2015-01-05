@@ -145,9 +145,7 @@ class KRWMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
             let geocoder = CLGeocoder()
             geocoder.reverseGeocodeLocation(CLLocation(latitude: lat, longitude: long), completionHandler: {(places: [AnyObject]!, error:NSError!) -> Void in
                 for place in places {
-                    println("################")
-                    println(place.name)
-                    println("################")
+                    //println(place.name) Destination
                 }
             })
             
@@ -163,6 +161,7 @@ class KRWMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         request.setSource(MKMapItem.mapItemForCurrentLocation())
         var destination: MKMapItem = MKMapItem(placemark: getDestination())
         request.setDestination(destination)
+        request.transportType = MKDirectionsTransportType.Walking
         request.requestsAlternateRoutes = false
         
         let directions = MKDirections(request: request)
@@ -173,7 +172,9 @@ class KRWMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
             if error != nil {
                 // Handle error
             } else {
+                println("################")
                 self.showRoute(response)
+                println("################")
             }
             
         })
@@ -198,6 +199,14 @@ class KRWMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     override func supportedInterfaceOrientations() -> Int {
         return Int(UIInterfaceOrientationMask.Portrait.rawValue)
+    }
+    
+    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
+        let renderer = MKPolylineRenderer(overlay: overlay)
+        
+        renderer.strokeColor = KRWSpotButtonStyleKit.kRWDrunkButtonColorClicked
+        renderer.lineWidth = 5.0
+        return renderer
     }
 
 }

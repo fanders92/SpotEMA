@@ -10,6 +10,9 @@ import UIKit
 
 class KRWTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var txtStreet: UILabel!
+    @IBOutlet weak var txtName: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

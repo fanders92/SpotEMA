@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 import CoreData
+import AddressBookUI
 
 class KRWAddressController: UITableViewController, UISearchResultsUpdating, UISearchControllerDelegate, CLLocationManagerDelegate, UIAlertViewDelegate {
     
@@ -87,16 +88,17 @@ class KRWAddressController: UITableViewController, UISearchResultsUpdating, UISe
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(self.identifier) as UITableViewCell
-        
-        var text: String?
+        let mapItem: MKMapItem = self.results!.objectAtIndex(indexPath.row) as MKMapItem
+        var text: String = ""
+        var name: String = ""
         if tableView == self.searchResultsController?.tableView {
             if let results = self.results {
-                text = (self.results!.objectAtIndex(indexPath.row)).name
+                text = ABCreateStringWithAddressDictionary(mapItem.placemark.addressDictionary, false)
             }
-        } else {
-            text = ""
         }
         
+        //cell.txtStreet.text = text
+        //cell.txtName.text = name
         cell.textLabel?.text = text
         
         return cell
@@ -132,7 +134,6 @@ class KRWAddressController: UITableViewController, UISearchResultsUpdating, UISe
                 context.save(nil)
                 println("New Destination saved.")
             }
-            self.dismissViewControllerAnimated(true, completion: nil)
         }
     }
     
@@ -159,7 +160,7 @@ class KRWAddressController: UITableViewController, UISearchResultsUpdating, UISe
             
             let searchCompletionHandler:MKLocalSearchCompletionHandler = {(response: MKLocalSearchResponse!, error: NSError!) -> Void in
                 if error != nil {
-                    let alert = UIAlertController(title: "Could not find places.", message: error.description, preferredStyle: UIAlertControllerStyle.Alert)
+                    let alert = UIAlertController(title: "Error!", message: "Could not find places.", preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
                 }else{
@@ -184,7 +185,11 @@ class KRWAddressController: UITableViewController, UISearchResultsUpdating, UISe
     func didDismissSearchController(searchController: UISearchController) {
         UIView.animateKeyframesWithDuration(0.5, delay: 0, options: UIViewKeyframeAnimationOptions.BeginFromCurrentState, animations: { () -> Void in
             self.hideSearchBar()
-            }, completion: nil)
+            }, completion: { value in
+                if value {
+                    self.navigationController?.popViewControllerAnimated(true)
+                }
+        })
     }
     
     // MARK: - CoreLocation Delegate Methods
