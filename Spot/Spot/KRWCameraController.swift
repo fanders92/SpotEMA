@@ -55,7 +55,7 @@ class KRWCameraController: UIViewController, CLLocationManagerDelegate {
         self.view.addSubview(self.cameraView)
         let btnDone = UIButton(frame: CGRectMake(0, 10, 70, 40))
         btnDone.setTitle("Done", forState: UIControlState.allZeros)
-        btnDone.setTitleColor(UIColor.whiteColor(), forState: UIControlState.allZeros)
+        btnDone.setTitleColor(UIColor.blackColor(), forState: UIControlState.allZeros)
         btnDone.addTarget(self, action: "btnDoneClicked:", forControlEvents: UIControlEvents.TouchUpInside)
         //self.view.bringSubviewToFront(cV)
         self.session = AVCaptureSession()

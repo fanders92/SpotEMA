@@ -39,7 +39,7 @@ class KRWMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         
         let btnDone = UIButton(frame: CGRectMake(0, 10, 70, 40))
         btnDone.setTitle("Done", forState: UIControlState.allZeros)
-        btnDone.setTitleColor(UIColor.whiteColor(), forState: UIControlState.allZeros)
+        btnDone.setTitleColor(UIColor.blackColor(), forState: UIControlState.allZeros)
         btnDone.addTarget(self, action: "btnDoneClicked:", forControlEvents: UIControlEvents.TouchUpInside)
         
         
@@ -211,7 +211,6 @@ class KRWMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     func showRoute(response: MKDirectionsResponse) {
         self.routes = response.routes as? [MKRoute]
         for route in response.routes as [MKRoute] {
-            
             self.mapView.addOverlay(route.polyline, level: MKOverlayLevel.AboveRoads)
             for step in route.steps {
                 println(step.instructions as String)
