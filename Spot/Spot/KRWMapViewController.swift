@@ -19,12 +19,31 @@ class KRWMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     let locationManager = CLLocationManager()
     var locationStatus : NSString = "Not Started"
     
+    var routes:[MKRoute]?
+    
+    let singleTap = UITapGestureRecognizer()
+    let doubleTap = UITapGestureRecognizer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.navigationController?.hidesBarsOnTap = true
-        //self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "toggle:"))
+        self.navigationController?.hidesBarsOnTap = false
+//        self.singleTap.addTarget(self, action: "routeAnnotation:")
+//        self.singleTap.numberOfTapsRequired = 1
+//        self.singleTap.cancelsTouchesInView = false
+//        self.doubleTap.numberOfTapsRequired = 2
+//        self.doubleTap.cancelsTouchesInView = false
+//        self.mapView.addGestureRecognizer(singleTap)
+//        self.mapView.addGestureRecognizer(doubleTap)
+//        self.singleTap.requireGestureRecognizerToFail(doubleTap)
         
+        let btnDone = UIButton(frame: CGRectMake(0, 10, 70, 40))
+        btnDone.setTitle("Done", forState: UIControlState.allZeros)
+        btnDone.setTitleColor(UIColor.whiteColor(), forState: UIControlState.allZeros)
+        btnDone.addTarget(self, action: "btnDoneClicked:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        
+        self.mapView.addSubview(btnDone)
         self.mapView.addSubview(self.toolbar)
         
         if (CLLocationManager.locationServicesEnabled()) {
@@ -157,6 +176,13 @@ class KRWMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     }
     
     @IBAction func bringMeHome(sender: AnyObject) {
+        let progress = UIActivityIndicatorView(frame: CGRectMake(0, 0, 80, 80))
+        progress.center = self.mapView.center
+        progress.backgroundColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 0.4)
+        progress.color = UIColor.blackColor()
+        self.mapView.addSubview(progress)
+        progress.startAnimating()
+        
         let request = MKDirectionsRequest()
         request.setSource(MKMapItem.mapItemForCurrentLocation())
         var destination: MKMapItem = MKMapItem(placemark: getDestination())
@@ -176,16 +202,17 @@ class KRWMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
                 self.showRoute(response)
                 println("################")
             }
-            
+            progress.stopAnimating()
+            progress.removeFromSuperview()
         })
+        
     }
     
     func showRoute(response: MKDirectionsResponse) {
-        
+        self.routes = response.routes as? [MKRoute]
         for route in response.routes as [MKRoute] {
             
             self.mapView.addOverlay(route.polyline, level: MKOverlayLevel.AboveRoads)
-            
             for step in route.steps {
                 println(step.instructions as String)
             }
@@ -208,6 +235,34 @@ class KRWMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         renderer.lineWidth = 5.0
         return renderer
     }
+    
+//    func routeAnnotation (sender: UIGestureRecognizer) {
+//        if self.mapView.overlays == nil {
+//            print("overlays = nil")
+//            return
+//        }
+//        var tapPoint:CGPoint = sender.locationInView(self.mapView)
+//        println("tapPoint: " + tapPoint.x.description + "  " + tapPoint.y.description)
+//        var tapCoord:CLLocationCoordinate2D = self.mapView.convertPoint(tapPoint, toCoordinateFromView: self.mapView)
+//        var mapPoint:MKMapPoint = MKMapPointForCoordinate(tapCoord)
+//        var mapPointCGP = CGPointMake(CGFloat(mapPoint.x), CGFloat(mapPoint.y))
+//        for id in self.mapView.overlays {
+//            if id.isKindOfClass(MKPolyline) {
+//                var poly = id as MKPolyline
+//                if poly.intersectsMapRect(MKMapRectMake(tapCoord.latitude, tapCoord.longitude, , )) {
+//                    println("Hit motherflipper")
+//                }else{
+//                    println("no Hit motherflopper")
+//                }
+//            }
+//        }
+//    }
+    
+    func btnDoneClicked (sender: UIButton) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
 
 }
+
+
 

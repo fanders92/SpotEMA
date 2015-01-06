@@ -53,6 +53,10 @@ class KRWCameraController: UIViewController, CLLocationManagerDelegate {
         self.cameraView.bounds = self.view.bounds
         self.cameraView.center = self.view.center
         self.view.addSubview(self.cameraView)
+        let btnDone = UIButton(frame: CGRectMake(0, 10, 70, 40))
+        btnDone.setTitle("Done", forState: UIControlState.allZeros)
+        btnDone.setTitleColor(UIColor.whiteColor(), forState: UIControlState.allZeros)
+        btnDone.addTarget(self, action: "btnDoneClicked:", forControlEvents: UIControlEvents.TouchUpInside)
         //self.view.bringSubviewToFront(cV)
         self.session = AVCaptureSession()
         self.device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
@@ -73,6 +77,7 @@ class KRWCameraController: UIViewController, CLLocationManagerDelegate {
             self.previewLayer?.position = CGPointMake(CGRectGetMidX(self.cameraView.bounds), CGRectGetMidY(self.cameraView.bounds))
             self.cameraView.layer.addSublayer(self.previewLayer)
             self.cameraView.addSubview(self.btnSnapPicture)
+            self.cameraView.addSubview(btnDone)
         } else {
             println("Error: " + error.debugDescription)
         }
@@ -249,6 +254,10 @@ class KRWCameraController: UIViewController, CLLocationManagerDelegate {
             } else {
                 NSLog("Denied access: \(locationStatus)")
             }
+    }
+    
+    func btnDoneClicked (sender: UIButton) {
+        self.navigationController?.popViewControllerAnimated(true)
     }
 
 }
