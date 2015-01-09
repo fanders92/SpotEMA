@@ -211,9 +211,6 @@ class KRWCameraController: UIViewController, CLLocationManagerDelegate {
         })
     }
     
-    override func supportedInterfaceOrientations() -> Int {
-        return Int(UIInterfaceOrientationMask.Portrait.rawValue)
-    }
 
     // MARK: - CoreLocation Delegate Methods
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
@@ -258,6 +255,14 @@ class KRWCameraController: UIViewController, CLLocationManagerDelegate {
     
     func btnDoneClicked (sender: UIButton) {
         self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    override func shouldAutorotate() -> Bool {
+        return false
+    }
+    
+    override func supportedInterfaceOrientations() -> Int {
+        return UIInterfaceOrientation.Portrait.rawValue
     }
 
 }

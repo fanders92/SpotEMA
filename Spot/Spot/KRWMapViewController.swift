@@ -223,10 +223,6 @@ class KRWMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         self.mapView.setRegion(region, animated: true)
     }
     
-    override func supportedInterfaceOrientations() -> Int {
-        return Int(UIInterfaceOrientationMask.Portrait.rawValue)
-    }
-    
     func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
         let renderer = MKPolylineRenderer(overlay: overlay)
         
@@ -259,6 +255,14 @@ class KRWMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     func btnDoneClicked (sender: UIButton) {
         self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    override func shouldAutorotate() -> Bool {
+        return false
+    }
+    
+    override func supportedInterfaceOrientations() -> Int {
+        return UIInterfaceOrientation.Portrait.rawValue
     }
 
 }

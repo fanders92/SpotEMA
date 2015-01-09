@@ -102,12 +102,16 @@ class SoberViewController: UIViewController, ABPeoplePickerNavigationControllerD
         return phoneNumber
     }
     
-    override func supportedInterfaceOrientations() -> Int {
-        return Int(UIInterfaceOrientationMask.Portrait.rawValue)
-    }
-    
     @IBAction func updateButtonStyleDown(sender: UIButton) {
         sender.setNeedsDisplay()
+    }
+    
+    override func shouldAutorotate() -> Bool {
+        return false
+    }
+    
+    override func supportedInterfaceOrientations() -> Int {
+        return UIInterfaceOrientation.Portrait.rawValue
     }
 
 }

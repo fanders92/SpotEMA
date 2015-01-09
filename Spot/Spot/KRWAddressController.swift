@@ -232,5 +232,13 @@ class KRWAddressController: UITableViewController, UISearchResultsUpdating, UISe
                 NSLog("Denied access: \(locationStatus)")
             }
     }
+    
+    override func shouldAutorotate() -> Bool {
+        return false
+    }
+    
+    override func supportedInterfaceOrientations() -> Int {
+        return UIInterfaceOrientation.Portrait.rawValue
+    }
 
 }
