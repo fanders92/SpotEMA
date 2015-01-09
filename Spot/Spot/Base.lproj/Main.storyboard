@@ -7,7 +7,8 @@
         <!--Navigation Controller-->
         <scene sceneID="xXg-MR-6My">
             <objects>
-                <navigationController id="iEx-6o-Wn2" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="iEx-6o-Wn2" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eOU-VA-YkL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -43,7 +44,7 @@
                                 </variation>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gS-bu-5Hz" customClass="KRWContactButton" customModule="Spot" customModuleProvider="target">
-                                <rect key="frame" x="250" y="155" width="100" height="100"/>
+                                <rect key="frame" x="250" y="150" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="cia-lX-fPh"/>
                                     <constraint firstAttribute="width" constant="100" id="eC0-BW-ZQn"/>
@@ -63,7 +64,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jv5-jy-Y1f" customClass="KRWHomeButton" customModule="Spot" customModuleProvider="target">
-                                <rect key="frame" x="250" y="332" width="100" height="100"/>
+                                <rect key="frame" x="250" y="300" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="aFV-k2-uIA"/>
                                 </constraints>
@@ -82,7 +83,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fzq-DV-SiH" customClass="KRWDrunkButton" customModule="Spot" customModuleProvider="target">
-                                <rect key="frame" x="175" y="470" width="250" height="50"/>
+                                <rect key="frame" x="175" y="520" width="250" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="dNT-Rv-Z1B"/>
                                     <constraint firstAttribute="height" constant="50" id="hTu-Xg-15u"/>
@@ -101,20 +102,32 @@
                                     <segue destination="YMo-fC-dCW" kind="show" id="cgL-Vr-mjT"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3v-0s-Gfp">
+                                <rect key="frame" x="223" y="37" width="155" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="155" id="5BB-Zr-F1f"/>
+                                    <constraint firstAttribute="height" constant="75" id="gS9-t6-ucf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="60"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8gS-bu-5Hz" firstAttribute="top" secondItem="g2V-t1-4uD" secondAttribute="bottom" priority="700" constant="91" id="5Pg-ox-irG"/>
+                            <constraint firstItem="8gS-bu-5Hz" firstAttribute="top" secondItem="g2V-t1-4uD" secondAttribute="bottom" priority="700" constant="130" id="5Pg-ox-irG"/>
                             <constraint firstItem="Jv5-jy-Y1f" firstAttribute="leading" secondItem="8gS-bu-5Hz" secondAttribute="leading" id="AxQ-me-GzG"/>
-                            <constraint firstItem="A3C-mF-pWP" firstAttribute="top" secondItem="Fzq-DV-SiH" secondAttribute="bottom" priority="700" constant="80" id="Cng-lT-eVa"/>
-                            <constraint firstItem="Fzq-DV-SiH" firstAttribute="top" secondItem="Jv5-jy-Y1f" secondAttribute="bottom" priority="750" constant="38" id="Gpo-L6-hwY"/>
+                            <constraint firstItem="A3C-mF-pWP" firstAttribute="top" secondItem="Fzq-DV-SiH" secondAttribute="bottom" priority="700" constant="30" id="Cng-lT-eVa"/>
+                            <constraint firstItem="Fzq-DV-SiH" firstAttribute="top" secondItem="Jv5-jy-Y1f" secondAttribute="bottom" priority="700" constant="120" id="Gpo-L6-hwY"/>
                             <constraint firstItem="42m-Gp-DMD" firstAttribute="bottom" secondItem="A3C-mF-pWP" secondAttribute="top" id="HBE-hm-t6b"/>
                             <constraint firstItem="8gS-bu-5Hz" firstAttribute="centerX" secondItem="42m-Gp-DMD" secondAttribute="centerX" id="JcB-Wu-hrW"/>
-                            <constraint firstItem="Jv5-jy-Y1f" firstAttribute="top" secondItem="8gS-bu-5Hz" secondAttribute="bottom" priority="750" constant="77" id="Jij-mQ-Pho"/>
+                            <constraint firstItem="Jv5-jy-Y1f" firstAttribute="top" secondItem="8gS-bu-5Hz" secondAttribute="bottom" priority="750" constant="50" id="Jij-mQ-Pho"/>
+                            <constraint firstItem="l3v-0s-Gfp" firstAttribute="top" secondItem="g2V-t1-4uD" secondAttribute="bottom" constant="17" id="SlV-aR-zHc"/>
                             <constraint firstItem="42m-Gp-DMD" firstAttribute="top" secondItem="CKN-ys-2Gn" secondAttribute="top" id="U0h-hE-R7d"/>
                             <constraint firstItem="8gS-bu-5Hz" firstAttribute="trailing" secondItem="Jv5-jy-Y1f" secondAttribute="trailing" id="V74-k4-C7b"/>
+                            <constraint firstItem="l3v-0s-Gfp" firstAttribute="centerX" secondItem="8gS-bu-5Hz" secondAttribute="centerX" id="eti-qe-LFv"/>
                             <constraint firstItem="Jv5-jy-Y1f" firstAttribute="centerX" secondItem="Fzq-DV-SiH" secondAttribute="centerX" id="exe-ku-Veu"/>
-                            <constraint firstItem="Jv5-jy-Y1f" firstAttribute="top" secondItem="8gS-bu-5Hz" secondAttribute="bottom" priority="750" constant="77" id="faB-dS-xGz"/>
+                            <constraint firstItem="Jv5-jy-Y1f" firstAttribute="top" secondItem="8gS-bu-5Hz" secondAttribute="bottom" priority="750" constant="50" id="faB-dS-xGz"/>
                             <constraint firstItem="42m-Gp-DMD" firstAttribute="leading" secondItem="CKN-ys-2Gn" secondAttribute="leading" id="hG1-E1-alL"/>
                             <constraint firstAttribute="trailing" secondItem="42m-Gp-DMD" secondAttribute="trailing" id="tw3-3c-4Ba"/>
                         </constraints>
@@ -188,6 +201,7 @@
                             <outlet property="delegate" destination="fID-gJ-szg" id="E5F-mh-fxu"/>
                         </connections>
                     </tableView>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J0V-zZ-r5T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
