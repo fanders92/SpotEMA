@@ -3,7 +3,7 @@
 //  Spot
 //
 //  Created by Florian Anders on 10.01.15.
-//  Copyright (c) 2015 K.Wachendorff. All rights reserved.
+//  Copyright (c) 2015 K.Wachendorff & F.Anders. All rights reserved.
 //
 
 import UIKit

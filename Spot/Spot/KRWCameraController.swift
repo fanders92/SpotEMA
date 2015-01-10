@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  CameraClone2
 //
-//  Created by Kw on 23/11/14.
-//  Copyright (c) 2014 K.Wachendorff. All rights reserved.
+//  Created by Konstantin Wachendorff on 23/11/14.
+//  Copyright (c) 2015 K.Wachendorff & F.Anders. All rights reserved.
 //
 
 import UIKit

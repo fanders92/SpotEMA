@@ -2,8 +2,8 @@
 //  KRWDrunkButton.swift
 //  Spot
 //
-//  Created by Kw on 30/12/14.
-//  Copyright (c) 2014 K.Wachendorff. All rights reserved.
+//  Created by Konstantin Wachendorff on 30/12/14.
+//  Copyright (c) 2015 K.Wachendorff & F.Anders. All rights reserved.
 //
 
 import UIKit

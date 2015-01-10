@@ -2,8 +2,8 @@
 //  KRWTableViewCell.swift
 //  Spot
 //
-//  Created by Kw on 03/01/15.
-//  Copyright (c) 2015 K.Wachendorff. All rights reserved.
+//  Created by Konstantin Wachendorff on 03/01/15.
+//  Copyright (c) 2015 K.Wachendorff & F.Anders. All rights reserved.
 //
 
 import UIKit
