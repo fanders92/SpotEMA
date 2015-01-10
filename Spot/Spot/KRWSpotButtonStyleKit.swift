@@ -66,7 +66,7 @@ public class KRWSpotButtonStyleKit : NSObject {
 
         let kRWDrunkButtonTextFontAttributes = [NSFontAttributeName: UIFont(name: "Helvetica", size: 25)!, NSForegroundColorAttributeName: UIColor.whiteColor(), NSParagraphStyleAttributeName: kRWDrunkButtonTextStyle]
 
-        "I am Drunk!".drawInRect(kRWDrunkButtonTextRect, withAttributes: kRWDrunkButtonTextFontAttributes)
+        "I am Lost!".drawInRect(kRWDrunkButtonTextRect, withAttributes: kRWDrunkButtonTextFontAttributes)
     }
 
     public class func drawKRWDrunkButtonNormal() {
@@ -95,7 +95,7 @@ public class KRWSpotButtonStyleKit : NSObject {
 
         let kRWDrunkButtonTextFontAttributes = [NSFontAttributeName: UIFont(name: "Helvetica", size: 25)!, NSForegroundColorAttributeName: UIColor.whiteColor(), NSParagraphStyleAttributeName: kRWDrunkButtonTextStyle]
 
-        "I am Drunk!".drawInRect(kRWDrunkButtonTextRect, withAttributes: kRWDrunkButtonTextFontAttributes)
+        "I am Lost!".drawInRect(kRWDrunkButtonTextRect, withAttributes: kRWDrunkButtonTextFontAttributes)
     }
 
     public class func drawKRWHomeButtonClicked() {
