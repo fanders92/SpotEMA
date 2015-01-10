@@ -11,7 +11,7 @@ import AddressBookUI
 import CoreData
 import MobileCoreServices
 
-class SoberViewController: UIViewController, ABPeoplePickerNavigationControllerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class SpotViewController: UIViewController, ABPeoplePickerNavigationControllerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     lazy var charSet = NSCharacterSet(charactersInString: "()- ")
     

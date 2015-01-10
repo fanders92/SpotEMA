@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		172CB1651A3AD90500E0B88F /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172CB1641A3AD90500E0B88F /* AddressBook.framework */; };
 		172CB1671A3AD91200E0B88F /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172CB1661A3AD91200E0B88F /* AddressBookUI.framework */; };
-		172CB1691A3AD98E00E0B88F /* SoberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CB1681A3AD98E00E0B88F /* SoberViewController.swift */; };
+		172CB1691A3AD98E00E0B88F /* SpotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CB1681A3AD98E00E0B88F /* SpotViewController.swift */; };
 		174D2AE81A61284B0019630D /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174D2AE71A61284B0019630D /* CameraViewController.swift */; };
 		C844689C1A5AD5060038D693 /* KRWTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C844689B1A5AD5060038D693 /* KRWTableViewCell.swift */; };
 		C89C0A0E1A53058E0069CCD6 /* KRWDataSpot.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C89C0A0C1A53058E0069CCD6 /* KRWDataSpot.xcdatamodeld */; };
@@ -41,7 +41,7 @@
 /* Begin PBXFileReference section */
 		172CB1641A3AD90500E0B88F /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		172CB1661A3AD91200E0B88F /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
-		172CB1681A3AD98E00E0B88F /* SoberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoberViewController.swift; sourceTree = "<group>"; };
+		172CB1681A3AD98E00E0B88F /* SpotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotViewController.swift; sourceTree = "<group>"; };
 		174D2AE71A61284B0019630D /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = ../CameraViewController.swift; sourceTree = "<group>"; };
 		C844689B1A5AD5060038D693 /* KRWTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KRWTableViewCell.swift; sourceTree = "<group>"; };
 		C89C0A0D1A53058E0069CCD6 /* KRWDataSpot.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KRWDataSpot.xcdatamodel; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 				C89C0A231A561FEA0069CCD6 /* KRWAddressController.swift */,
 				C844689B1A5AD5060038D693 /* KRWTableViewCell.swift */,
 				174D2AE71A61284B0019630D /* CameraViewController.swift */,
-				172CB1681A3AD98E00E0B88F /* SoberViewController.swift */,
+				172CB1681A3AD98E00E0B88F /* SpotViewController.swift */,
 				C8ACE3791A2CFFC700F968CD /* Main.storyboard */,
 				C8ACE37C1A2CFFC700F968CD /* Images.xcassets */,
 				C8ACE37E1A2CFFC700F968CD /* LaunchScreen.xib */,
@@ -264,7 +264,7 @@
 				174D2AE81A61284B0019630D /* CameraViewController.swift in Sources */,
 				C89C0A1C1A532D420069CCD6 /* KRWSpotButtonStyleKit.swift in Sources */,
 				C89C0A201A5376E50069CCD6 /* KRWCameraController.swift in Sources */,
-				172CB1691A3AD98E00E0B88F /* SoberViewController.swift in Sources */,
+				172CB1691A3AD98E00E0B88F /* SpotViewController.swift in Sources */,
 				C89C0A121A531E330069CCD6 /* KRWButtons.swift in Sources */,
 				C89C0A241A561FEA0069CCD6 /* KRWAddressController.swift in Sources */,
 			);

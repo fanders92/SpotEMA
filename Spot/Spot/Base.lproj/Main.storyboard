@@ -29,7 +29,7 @@
         <!--Spot-->
         <scene sceneID="zhS-gM-MMx">
             <objects>
-                <viewController id="Dg2-xK-zOn" customClass="SoberViewController" customModule="Spot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Dg2-xK-zOn" customClass="SpotViewController" customModule="Spot" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g2V-t1-4uD"/>
                         <viewControllerLayoutGuide type="bottom" id="A3C-mF-pWP"/>
