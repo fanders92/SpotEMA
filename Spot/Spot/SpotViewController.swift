@@ -13,7 +13,7 @@ import MobileCoreServices
 
 class SpotViewController: UIViewController, ABPeoplePickerNavigationControllerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
-    lazy var charSet = NSCharacterSet(charactersInString: "()- ")
+    var charSet = NSCharacterSet(charactersInString: "()- ")
     
     @IBOutlet weak var backgroundImage: UIImageView!
     
