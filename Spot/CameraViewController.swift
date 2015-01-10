@@ -21,8 +21,8 @@ class CameraViewController: UIImagePickerController, UIImagePickerControllerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
-        self.mediaTypes = [kUTTypeImage]
-        self.sourceType = .Camera
+        self.mediaTypes = [kUTTypeImage]    //
+        self.sourceType = .Camera   //Set the interface, which will be displayed
         if (CLLocationManager.locationServicesEnabled()) {
             // Set current ViewController to the delegate
             locationManager.delegate = self
@@ -80,7 +80,7 @@ class CameraViewController: UIImagePickerController, UIImagePickerControllerDele
             }
     }
 
-    
+    //Save image, get and save location
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         UIImageWriteToSavedPhotosAlbum(info[UIImagePickerControllerOriginalImage] as UIImage?, nil, nil, nil)   //Speichern des Bildes
         
@@ -107,7 +107,7 @@ class CameraViewController: UIImagePickerController, UIImagePickerControllerDele
             println("New Destination saved.")
         }
 
-        picker.dismissViewControllerAnimated(true, completion: nil)
+        picker.dismissViewControllerAnimated(true, completion: nil) //Leave camera
     }
 
     

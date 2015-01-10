@@ -22,7 +22,7 @@ class SpotViewController: UIViewController, ABPeoplePickerNavigationControllerDe
         // Do any additional setup after loading the view.
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.navigationController?.hidesBarsOnTap = false
-        self.backgroundImage.backgroundColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
+        self.backgroundImage.backgroundColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)   //Hintergrundfarbe festlegen
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -53,6 +53,7 @@ class SpotViewController: UIViewController, ABPeoplePickerNavigationControllerDe
         
     }
 
+    //Funktion zum Anzeigen der Kontakte
     @IBAction func setEmergencyContact(sender: KRWContactButton) {
         let abController = ABPeoplePickerNavigationController()
         abController.peoplePickerDelegate = self
@@ -60,10 +61,12 @@ class SpotViewController: UIViewController, ABPeoplePickerNavigationControllerDe
         self.presentViewController(abController, animated: true, completion: nil)
     }
 
+    //Wird ausgeführt wenn Nutzer Telefonnummer ausgewählt hat
     func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecord!, property: ABPropertyID, identifier: ABMultiValueIdentifier){
          let phoneNumber = cleanPhoneNumber(getPhoneNumberOfSelectedPerson(person, identifier: identifier))
     }
     
+    //Feststellen der Telefonnummer
     func getPhoneNumberOfSelectedPerson(person: ABRecord, identifier: ABMultiValueIdentifier) -> String {
         let phones: ABMultiValue = ABRecordCopyValue(person, kABPersonPhoneProperty).takeUnretainedValue()
         let index = ABMultiValueGetIndexForIdentifier(phones, identifier)
@@ -73,6 +76,7 @@ class SpotViewController: UIViewController, ABPeoplePickerNavigationControllerDe
         return ""
     }
     
+    //Telefonnummer säubern und persistent Speichern
     func cleanPhoneNumber(var phoneNumber: String) -> String{
        (phoneNumber.componentsSeparatedByCharactersInSet(charSet) as NSArray).componentsJoinedByString("")
         phoneNumber = phoneNumber.stringByReplacingOccurrencesOfString("+", withString: "00")
