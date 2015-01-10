@@ -22,7 +22,7 @@ class SoberViewController: UIViewController, ABPeoplePickerNavigationControllerD
         // Do any additional setup after loading the view.
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.navigationController?.hidesBarsOnTap = false
-        self.backgroundImage.backgroundColor = UIColor(red: 0.6, green: 0.4, blue: 0.2, alpha: 1)
+        self.backgroundImage.backgroundColor = UIColor(red: 0.549, green: 0.784, blue: 0.109, alpha: 1)
     }
     
     override func viewWillAppear(animated: Bool) {
