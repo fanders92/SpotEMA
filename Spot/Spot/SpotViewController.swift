@@ -40,7 +40,6 @@ class SpotViewController: UIViewController, ABPeoplePickerNavigationControllerDe
         let optionMenu = UIAlertController(title: nil, message: "Choose", preferredStyle: UIAlertControllerStyle.ActionSheet)
         let cameraOption = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default) { (alert: UIAlertAction!) -> Void in
             self.performSegueWithIdentifier("camera", sender: self)
-            //self.openCamera()
         }
         let addressOption = UIAlertAction(title: "Manual", style: UIAlertActionStyle.Default) { (alert: UIAlertAction!) -> Void in
             self.performSegueWithIdentifier("manual", sender: self)
@@ -63,32 +62,17 @@ class SpotViewController: UIViewController, ABPeoplePickerNavigationControllerDe
     }
 
     func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecord!, property: ABPropertyID, identifier: ABMultiValueIdentifier){
-        
-        phoneNumber = cleanPhoneNumber(getPhoneNumberOfSelectedPerson(person, identifier: identifier) as String)
+        phoneNumber = cleanPhoneNumber(getPhoneNumberOfSelectedPerson(person, identifier: identifier))
     }
     
     func getPhoneNumberOfSelectedPerson(person: ABRecord, identifier: ABMultiValueIdentifier) -> String {
         let phones: ABMultiValue = ABRecordCopyValue(person, kABPersonPhoneProperty).takeUnretainedValue()
         let index = ABMultiValueGetIndexForIdentifier(phones, identifier)
         if let phoneNumber = ABMultiValueCopyValueAtIndex(phones, index).takeUnretainedValue() as? String {
+            println(phoneNumber)
             return phoneNumber
         }
         return ""
-    }
-    
-    func openCamera() {
-        if(UIImagePickerController.isSourceTypeAvailable(.Camera)){
-            let camController = UIImagePickerController();
-            camController.delegate = self
-            camController.mediaTypes = [kUTTypeImage]
-            camController.sourceType = .Camera
-            self.presentViewController(camController, animated: true, completion: nil)
-        } else{
-            let alertController = UIAlertController(title: "Error", message:
-                "No Camera available!", preferredStyle: UIAlertControllerStyle.Alert)
-            alertController.addAction(UIAlertAction(title: "Close", style: .Default,handler: nil))
-            self.presentViewController(alertController, animated: true, completion: nil)
-        }
     }
     
     func cleanPhoneNumber(var phoneNumber: String) -> String{
@@ -96,6 +80,8 @@ class SpotViewController: UIViewController, ABPeoplePickerNavigationControllerDe
         phoneNumber = phoneNumber.stringByReplacingOccurrencesOfString("+", withString: "00")
         phoneNumber = phoneNumber.stringByReplacingOccurrencesOfString(" ", withString: "")
         phoneNumber = "tel://" + phoneNumber
+        println(phoneNumber)
+        
         let appDel:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         let context:NSManagedObjectContext = appDel.managedObjectContext!
         
