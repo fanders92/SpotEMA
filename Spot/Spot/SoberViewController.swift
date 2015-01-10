@@ -9,8 +9,9 @@
 import UIKit
 import AddressBookUI
 import CoreData
+import MobileCoreServices
 
-class SoberViewController: UIViewController, ABPeoplePickerNavigationControllerDelegate, UINavigationControllerDelegate {
+class SoberViewController: UIViewController, ABPeoplePickerNavigationControllerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     lazy var charSet = NSCharacterSet(charactersInString: "()- ")
     
@@ -39,6 +40,7 @@ class SoberViewController: UIViewController, ABPeoplePickerNavigationControllerD
         let optionMenu = UIAlertController(title: nil, message: "Choose", preferredStyle: UIAlertControllerStyle.ActionSheet)
         let cameraOption = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default) { (alert: UIAlertAction!) -> Void in
             self.performSegueWithIdentifier("camera", sender: self)
+            //self.openCamera()
         }
         let addressOption = UIAlertAction(title: "Manual", style: UIAlertActionStyle.Default) { (alert: UIAlertAction!) -> Void in
             self.performSegueWithIdentifier("manual", sender: self)
@@ -72,6 +74,21 @@ class SoberViewController: UIViewController, ABPeoplePickerNavigationControllerD
             return phoneNumber
         }
         return ""
+    }
+    
+    func openCamera() {
+        if(UIImagePickerController.isSourceTypeAvailable(.Camera)){
+            let camController = UIImagePickerController();
+            camController.delegate = self
+            camController.mediaTypes = [kUTTypeImage]
+            camController.sourceType = .Camera
+            self.presentViewController(camController, animated: true, completion: nil)
+        } else{
+            let alertController = UIAlertController(title: "Error", message:
+                "No Camera available!", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Close", style: .Default,handler: nil))
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
     }
     
     func cleanPhoneNumber(var phoneNumber: String) -> String{
