@@ -44,6 +44,7 @@ class KRWAddressController: UITableViewController, UISearchResultsUpdating, UISe
         self.searchResultsController?.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: self.identifier)
         
         self.searchController = UISearchController(searchResultsController: self.searchResultsController!)
+        self.searchController?.searchBar.placeholder = "Search for a location"
         self.searchController?.searchResultsUpdater = self
         self.searchController?.delegate = self
         self.searchController?.searchBar.sizeToFit() // bar size
