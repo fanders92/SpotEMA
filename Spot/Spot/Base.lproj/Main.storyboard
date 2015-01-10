@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iEx-6o-Wn2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C94b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iEx-6o-Wn2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6246"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -220,54 +221,56 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZTh-CR-Tqv">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
                                 </variation>
                             </mapView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HYl-Ll-nGW">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                                <items>
-                                    <barButtonItem style="plain" id="QMk-GU-YHP">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lAO-s5-RPX" customClass="KRWHomeButtonSmall" customModule="Spot" customModuleProvider="target">
-                                            <rect key="frame" x="16" y="7" width="30" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="bringMeHome:" destination="YMo-fC-dCW" eventType="touchUpInside" id="14G-rL-L0X"/>
-                                            </connections>
-                                        </button>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Pcd-Aa-U7u"/>
-                                    <barButtonItem style="plain" id="xF2-m9-jBi">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gRC-FA-xau" customClass="KRWCallButton" customModule="Spot" customModuleProvider="target">
-                                            <rect key="frame" x="551" y="7" width="30" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="callEmergencyContact:" destination="YMo-fC-dCW" eventType="touchUpInside" id="Gw8-Hf-eWb"/>
-                                            </connections>
-                                        </button>
-                                    </barButtonItem>
-                                </items>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="756" width="400" height="44"/>
-                                </variation>
-                            </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKQ-bK-IaS" customClass="KRWHomeButtonRound" customModule="Spot" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="535" width="65" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="G2V-tS-rYS"/>
+                                    <constraint firstAttribute="height" constant="65" id="gKy-3l-WMb"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="bringMeHome:" destination="YMo-fC-dCW" eventType="touchUpInside" id="eJX-kV-frg"/>
+                                    <action selector="updateButtonStyleDown:" destination="YMo-fC-dCW" eventType="touchDown" id="JVC-kL-f3F"/>
+                                    <action selector="updateButtonStyleDown:" destination="YMo-fC-dCW" eventType="touchUpOutside" id="UeA-2P-xIU"/>
+                                    <action selector="updateButtonStyleDown:" destination="YMo-fC-dCW" eventType="touchCancel" id="aqe-Yy-mfR"/>
+                                    <action selector="updateButtonStyleDown:" destination="YMo-fC-dCW" eventType="touchUpInside" id="ztj-FJ-65a"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QVi-aq-hBJ" customClass="KRWCallButton" customModule="Spot" customModuleProvider="target">
+                                <rect key="frame" x="535" y="535" width="65" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="B13-iN-XtD"/>
+                                    <constraint firstAttribute="width" constant="65" id="Inm-Q2-j1i"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="callEmergencyContact:" destination="YMo-fC-dCW" eventType="touchUpInside" id="gtq-Wt-t7A"/>
+                                    <action selector="updateButtonStyleDown:" destination="YMo-fC-dCW" eventType="touchDown" id="GAA-L3-dJW"/>
+                                    <action selector="updateButtonStyleDown:" destination="YMo-fC-dCW" eventType="touchCancel" id="NSR-B4-MzW"/>
+                                    <action selector="updateButtonStyleDown:" destination="YMo-fC-dCW" eventType="touchUpOutside" id="kBs-JG-Ztg"/>
+                                    <action selector="updateButtonStyleDown:" destination="YMo-fC-dCW" eventType="touchUpInside" id="pDn-3o-0vX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="HYl-Ll-nGW" firstAttribute="bottom" secondItem="k6O-bR-Rdi" secondAttribute="top" id="1eO-vt-b4I"/>
-                            <constraint firstAttribute="trailing" secondItem="ZTh-CR-Tqv" secondAttribute="trailing" id="EGy-Ho-oxS"/>
-                            <constraint firstItem="HYl-Ll-nGW" firstAttribute="top" secondItem="ZTh-CR-Tqv" secondAttribute="bottom" id="QgB-xb-XoL"/>
-                            <constraint firstItem="ZTh-CR-Tqv" firstAttribute="leading" secondItem="HYl-Ll-nGW" secondAttribute="leading" id="gS4-KP-d8l"/>
-                            <constraint firstItem="HYl-Ll-nGW" firstAttribute="leading" secondItem="H2t-BX-Tba" secondAttribute="leading" id="kfg-pw-BHV"/>
-                            <constraint firstItem="ZTh-CR-Tqv" firstAttribute="top" secondItem="H2t-BX-Tba" secondAttribute="top" id="lNz-ik-hWy"/>
-                            <constraint firstItem="ZTh-CR-Tqv" firstAttribute="trailing" secondItem="HYl-Ll-nGW" secondAttribute="trailing" id="rCw-um-jPW"/>
+                            <constraint firstItem="k6O-bR-Rdi" firstAttribute="top" secondItem="QVi-aq-hBJ" secondAttribute="bottom" id="6Bo-v0-eSF"/>
+                            <constraint firstItem="JKQ-bK-IaS" firstAttribute="leading" secondItem="H2t-BX-Tba" secondAttribute="leadingMargin" constant="-16" id="8ds-bg-bQg"/>
+                            <constraint firstItem="ZTh-CR-Tqv" firstAttribute="bottom" secondItem="k6O-bR-Rdi" secondAttribute="top" id="8kv-cL-o28"/>
+                            <constraint firstItem="ZTh-CR-Tqv" firstAttribute="top" secondItem="H2t-BX-Tba" secondAttribute="top" id="NDV-tU-GqD"/>
+                            <constraint firstItem="k6O-bR-Rdi" firstAttribute="top" secondItem="JKQ-bK-IaS" secondAttribute="bottom" id="c3c-55-5qs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QVi-aq-hBJ" secondAttribute="trailing" constant="-16" id="eCS-sU-Gfp"/>
+                            <constraint firstItem="ZTh-CR-Tqv" firstAttribute="trailing" secondItem="QVi-aq-hBJ" secondAttribute="trailing" id="oC1-Jo-WgU"/>
+                            <constraint firstItem="ZTh-CR-Tqv" firstAttribute="leading" secondItem="JKQ-bK-IaS" secondAttribute="leading" id="yxl-RV-9en"/>
                         </constraints>
                     </view>
                     <toolbarItems/>

@@ -38,12 +38,12 @@ class KRWHomeButton: UIButton {
     }
 }
 
-class KRWHomeButtonSmall: UIButton {
+class KRWHomeButtonRound: UIButton {
     override func drawRect(rect: CGRect) {
         if self.state == UIControlState.Normal {
-            KRWSpotButtonStyleKit.drawKRWHomeButtonSmallNormal()
+            KRWSpotButtonStyleKit.drawKRWHomeButtonRoundNormal()
         }else{
-            KRWSpotButtonStyleKit.drawKRWHomeButtonSmallClicked()
+            KRWSpotButtonStyleKit.drawKRWHomeButtonRoundClicked()
         }
     }
 }
@@ -51,9 +51,9 @@ class KRWHomeButtonSmall: UIButton {
 class KRWCallButton: UIButton {
     override func drawRect(rect: CGRect) {
         if self.state == UIControlState.Normal {
-            KRWSpotButtonStyleKit.drawKRWCallButton2Normal()
+            KRWSpotButtonStyleKit.drawKRWCallButton2NormalBig()
         }else{
-            KRWSpotButtonStyleKit.drawKRWCallButton2Clicked()
+            KRWSpotButtonStyleKit.drawKRWCallButton2ClickedBig()
         }
     }
 }

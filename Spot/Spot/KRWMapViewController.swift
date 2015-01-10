@@ -257,6 +257,10 @@ class KRWMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         self.navigationController?.popViewControllerAnimated(true)
     }
     
+    @IBAction func updateButtonStyleDown(sender: UIButton) {
+        sender.setNeedsDisplay()
+    }
+    
     override func shouldAutorotate() -> Bool {
         return false
     }

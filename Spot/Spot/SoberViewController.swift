@@ -131,6 +131,10 @@ class SoberViewController: UIViewController, ABPeoplePickerNavigationControllerD
         return UIInterfaceOrientation.Portrait.rawValue
     }
     
+    override func preferredInterfaceOrientationForPresentation() -> UIInterfaceOrientation {
+        return UIInterfaceOrientation.Portrait
+    }
+    
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
     }
