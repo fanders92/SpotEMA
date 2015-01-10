@@ -109,7 +109,7 @@
                                     <constraint firstAttribute="height" constant="75" id="gS9-t6-ucf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="60"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.96614583333333337" green="0.96614583333333337" blue="0.96614583333333337" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
