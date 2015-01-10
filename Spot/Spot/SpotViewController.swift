@@ -16,7 +16,6 @@ class SpotViewController: UIViewController, ABPeoplePickerNavigationControllerDe
     lazy var charSet = NSCharacterSet(charactersInString: "()- ")
     
     @IBOutlet weak var backgroundImage: UIImageView!
-    var phoneNumber = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,14 +61,13 @@ class SpotViewController: UIViewController, ABPeoplePickerNavigationControllerDe
     }
 
     func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecord!, property: ABPropertyID, identifier: ABMultiValueIdentifier){
-        phoneNumber = cleanPhoneNumber(getPhoneNumberOfSelectedPerson(person, identifier: identifier))
+         let phoneNumber = cleanPhoneNumber(getPhoneNumberOfSelectedPerson(person, identifier: identifier))
     }
     
     func getPhoneNumberOfSelectedPerson(person: ABRecord, identifier: ABMultiValueIdentifier) -> String {
         let phones: ABMultiValue = ABRecordCopyValue(person, kABPersonPhoneProperty).takeUnretainedValue()
         let index = ABMultiValueGetIndexForIdentifier(phones, identifier)
         if let phoneNumber = ABMultiValueCopyValueAtIndex(phones, index).takeUnretainedValue() as? String {
-            println(phoneNumber)
             return phoneNumber
         }
         return ""
@@ -80,7 +78,6 @@ class SpotViewController: UIViewController, ABPeoplePickerNavigationControllerDe
         phoneNumber = phoneNumber.stringByReplacingOccurrencesOfString("+", withString: "00")
         phoneNumber = phoneNumber.stringByReplacingOccurrencesOfString(" ", withString: "")
         phoneNumber = "tel://" + phoneNumber
-        println(phoneNumber)
         
         let appDel:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         let context:NSManagedObjectContext = appDel.managedObjectContext!
