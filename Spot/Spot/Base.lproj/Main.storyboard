@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C94b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iEx-6o-Wn2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iEx-6o-Wn2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6246"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -37,17 +37,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="42m-Gp-DMD">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
-                                </variation>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gS-bu-5Hz" customClass="KRWContactButton" customModule="Spot" customModuleProvider="target">
                                 <rect key="frame" x="250" y="150" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="cia-lX-fPh"/>
-                                    <constraint firstAttribute="width" constant="100" id="eC0-BW-ZQn"/>
+                                    <constraint firstAttribute="width" constant="100" id="oLA-C0-sQt"/>
+                                    <constraint firstAttribute="height" constant="100" id="tNr-sp-qow"/>
                                 </constraints>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -66,7 +60,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jv5-jy-Y1f" customClass="KRWHomeButton" customModule="Spot" customModuleProvider="target">
                                 <rect key="frame" x="250" y="300" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="aFV-k2-uIA"/>
+                                    <constraint firstAttribute="height" constant="100" id="WKr-u5-5B1"/>
                                 </constraints>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -85,8 +79,8 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fzq-DV-SiH" customClass="KRWDrunkButton" customModule="Spot" customModuleProvider="target">
                                 <rect key="frame" x="175" y="520" width="250" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="dNT-Rv-Z1B"/>
-                                    <constraint firstAttribute="height" constant="50" id="hTu-Xg-15u"/>
+                                    <constraint firstAttribute="width" constant="250" id="ThQ-6i-eaW"/>
+                                    <constraint firstAttribute="height" constant="50" id="iRh-3d-6Q8"/>
                                 </constraints>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -105,36 +99,29 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3v-0s-Gfp">
                                 <rect key="frame" x="223" y="37" width="155" height="75"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="155" id="5BB-Zr-F1f"/>
-                                    <constraint firstAttribute="height" constant="75" id="gS9-t6-ucf"/>
+                                    <constraint firstAttribute="width" constant="155" id="3lx-gP-H5M"/>
+                                    <constraint firstAttribute="height" constant="75" id="h6t-dn-oAe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="60"/>
                                 <color key="textColor" red="0.96614583333333337" green="0.96614583333333337" blue="0.96614583333333337" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="8gS-bu-5Hz" firstAttribute="top" secondItem="g2V-t1-4uD" secondAttribute="bottom" priority="700" constant="130" id="5Pg-ox-irG"/>
-                            <constraint firstItem="Jv5-jy-Y1f" firstAttribute="leading" secondItem="8gS-bu-5Hz" secondAttribute="leading" id="AxQ-me-GzG"/>
-                            <constraint firstItem="A3C-mF-pWP" firstAttribute="top" secondItem="Fzq-DV-SiH" secondAttribute="bottom" priority="700" constant="30" id="Cng-lT-eVa"/>
-                            <constraint firstItem="Fzq-DV-SiH" firstAttribute="top" secondItem="Jv5-jy-Y1f" secondAttribute="bottom" priority="700" constant="120" id="Gpo-L6-hwY"/>
-                            <constraint firstItem="42m-Gp-DMD" firstAttribute="bottom" secondItem="A3C-mF-pWP" secondAttribute="top" id="HBE-hm-t6b"/>
-                            <constraint firstItem="8gS-bu-5Hz" firstAttribute="centerX" secondItem="42m-Gp-DMD" secondAttribute="centerX" id="JcB-Wu-hrW"/>
-                            <constraint firstItem="Jv5-jy-Y1f" firstAttribute="top" secondItem="8gS-bu-5Hz" secondAttribute="bottom" priority="750" constant="50" id="Jij-mQ-Pho"/>
-                            <constraint firstItem="l3v-0s-Gfp" firstAttribute="top" secondItem="g2V-t1-4uD" secondAttribute="bottom" constant="17" id="SlV-aR-zHc"/>
-                            <constraint firstItem="42m-Gp-DMD" firstAttribute="top" secondItem="CKN-ys-2Gn" secondAttribute="top" id="U0h-hE-R7d"/>
-                            <constraint firstItem="8gS-bu-5Hz" firstAttribute="trailing" secondItem="Jv5-jy-Y1f" secondAttribute="trailing" id="V74-k4-C7b"/>
-                            <constraint firstItem="l3v-0s-Gfp" firstAttribute="centerX" secondItem="8gS-bu-5Hz" secondAttribute="centerX" id="eti-qe-LFv"/>
-                            <constraint firstItem="Jv5-jy-Y1f" firstAttribute="centerX" secondItem="Fzq-DV-SiH" secondAttribute="centerX" id="exe-ku-Veu"/>
-                            <constraint firstItem="Jv5-jy-Y1f" firstAttribute="top" secondItem="8gS-bu-5Hz" secondAttribute="bottom" priority="750" constant="50" id="faB-dS-xGz"/>
-                            <constraint firstItem="42m-Gp-DMD" firstAttribute="leading" secondItem="CKN-ys-2Gn" secondAttribute="leading" id="hG1-E1-alL"/>
-                            <constraint firstAttribute="trailing" secondItem="42m-Gp-DMD" secondAttribute="trailing" id="tw3-3c-4Ba"/>
+                            <constraint firstItem="A3C-mF-pWP" firstAttribute="top" secondItem="Fzq-DV-SiH" secondAttribute="bottom" constant="30" id="5ih-go-x34"/>
+                            <constraint firstItem="8gS-bu-5Hz" firstAttribute="centerX" secondItem="l3v-0s-Gfp" secondAttribute="centerX" id="ESf-x3-hUt"/>
+                            <constraint firstItem="Jv5-jy-Y1f" firstAttribute="top" secondItem="8gS-bu-5Hz" secondAttribute="bottom" constant="50" id="J29-cy-slF"/>
+                            <constraint firstItem="Jv5-jy-Y1f" firstAttribute="centerX" secondItem="Fzq-DV-SiH" secondAttribute="centerX" id="Wyd-s5-jwC"/>
+                            <constraint firstItem="l3v-0s-Gfp" firstAttribute="top" secondItem="g2V-t1-4uD" secondAttribute="bottom" constant="17" id="Zl0-hF-IyA"/>
+                            <constraint firstItem="8gS-bu-5Hz" firstAttribute="top" secondItem="l3v-0s-Gfp" secondAttribute="bottom" constant="38" id="ltq-jF-LSq"/>
+                            <constraint firstItem="l3v-0s-Gfp" firstAttribute="centerX" secondItem="CKN-ys-2Gn" secondAttribute="centerX" id="nYM-3b-IF3"/>
+                            <constraint firstItem="Jv5-jy-Y1f" firstAttribute="trailing" secondItem="8gS-bu-5Hz" secondAttribute="trailing" id="pa6-UQ-Cfo"/>
+                            <constraint firstItem="Jv5-jy-Y1f" firstAttribute="leading" secondItem="8gS-bu-5Hz" secondAttribute="leading" id="vug-qD-ndn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Spot" id="n6l-Bj-MpW"/>
                     <connections>
-                        <outlet property="backgroundImage" destination="42m-Gp-DMD" id="cJ4-74-vIN"/>
                         <segue destination="9Kf-3N-r9Y" kind="presentation" identifier="camera" id="NhM-cp-1T1"/>
                         <segue destination="fID-gJ-szg" kind="show" identifier="manual" id="kQq-dz-UJy"/>
                     </connections>

@@ -14,15 +14,10 @@ import MobileCoreServices
 class SpotViewController: UIViewController, ABPeoplePickerNavigationControllerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     var charSet = NSCharacterSet(charactersInString: "()- ")
-    
-    @IBOutlet weak var backgroundImage: UIImageView!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-        self.navigationController?.hidesBarsOnTap = false
-        self.backgroundImage.backgroundColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)   //Hintergrundfarbe festlegen
     }
     
     override func viewWillAppear(animated: Bool) {
