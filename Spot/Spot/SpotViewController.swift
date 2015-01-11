@@ -45,7 +45,6 @@ class SpotViewController: UIViewController, ABPeoplePickerNavigationControllerDe
         self.presentViewController(optionMenu, animated: true) { () -> Void in
             println("OptionMenu")
         }
-        
     }
 
     //Funktion zum Anzeigen der Kontakte
@@ -58,7 +57,7 @@ class SpotViewController: UIViewController, ABPeoplePickerNavigationControllerDe
 
     //Wird ausgeführt wenn Nutzer Telefonnummer ausgewählt hat
     func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecord!, property: ABPropertyID, identifier: ABMultiValueIdentifier){
-         let phoneNumber = cleanPhoneNumber(getPhoneNumberOfSelectedPerson(person, identifier: identifier))
+         cleanPhoneNumber(getPhoneNumberOfSelectedPerson(person, identifier: identifier))
     }
     
     //Feststellen der Telefonnummer
