@@ -71,7 +71,7 @@ class SpotViewController: UIViewController, ABPeoplePickerNavigationControllerDe
     }
     
     //Telefonnummer säubern und persistent Speichern
-    func cleanPhoneNumber(var phoneNumber: String) -> String{
+    func cleanPhoneNumber(var phoneNumber: String){
        (phoneNumber.componentsSeparatedByCharactersInSet(charSet) as NSArray).componentsJoinedByString("")
         phoneNumber = phoneNumber.stringByReplacingOccurrencesOfString("+", withString: "00")
         phoneNumber = phoneNumber.stringByReplacingOccurrencesOfString(" ", withString: "")
@@ -97,7 +97,6 @@ class SpotViewController: UIViewController, ABPeoplePickerNavigationControllerDe
             context.save(nil)
             println("New Number saved.")
         }
-        return phoneNumber
     }
     
     @IBAction func updateButtonStyleDown(sender: UIButton) {
