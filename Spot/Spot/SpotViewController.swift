@@ -110,15 +110,6 @@ class SpotViewController: UIViewController, ABPeoplePickerNavigationControllerDe
         sender.setNeedsDisplay()
     }
     
-    override func shouldAutorotate() -> Bool {
-        return true
-    }
-    
-    override func supportedInterfaceOrientations() -> Int {
-        return Int(UIInterfaceOrientationMask.Portrait.rawValue)
-    }
-    
-    
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
     }
