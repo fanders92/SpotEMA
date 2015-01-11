@@ -35,7 +35,7 @@
                 <constraint firstItem="uxN-ZL-zNx" firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="wY7-Ml-xCk"/>
                 <constraint firstItem="uxN-ZL-zNx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="202" id="zC4-tE-IGX"/>
             </constraints>
-            <nil key="simulatedStatusBarMetrics"/>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
