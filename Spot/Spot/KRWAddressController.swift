@@ -196,7 +196,6 @@ class KRWAddressController: UITableViewController, UISearchResultsUpdating, UISe
     // MARK: - CoreLocation Delegate Methods
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
         locationManager.stopUpdatingLocation()
-        //removeLoadingView() // ToDo find out what that means ????
         if ((error) != nil) {
             print(error)
         }

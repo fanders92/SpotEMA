@@ -14,7 +14,6 @@ import CoreData
 class KRWMapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
-    var toolbar = UIToolbar()
     
     let locationManager = CLLocationManager()
     var locationStatus : NSString = "Not Started"
@@ -44,7 +43,6 @@ class KRWMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         
         
         self.mapView.addSubview(btnDone)
-        self.mapView.addSubview(self.toolbar)
         
         if (CLLocationManager.locationServicesEnabled()) {
             // Set current ViewController to the delegate
@@ -67,7 +65,6 @@ class KRWMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     // MARK: - CoreLocation Delegate Methods
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
         locationManager.stopUpdatingLocation()
-        //removeLoadingView() // ToDo find out what that means ????
         if ((error) != nil) {
             print(error)
         }
